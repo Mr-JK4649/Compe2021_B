@@ -39,6 +39,7 @@ public class FloorRota: MonoBehaviour
         // }
 
 
+
         //transform.rotation = new Quaternion(transform.rotation.x,0,transform.rotation.z,0);
         //transform.SetPositionAndRotation(Floor.position, Quaternion.e);/*(Floor.rotation.x,0.0f,Floor.rotation.z,0.0f)*/
 
