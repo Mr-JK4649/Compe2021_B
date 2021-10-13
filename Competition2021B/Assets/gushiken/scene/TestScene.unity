@@ -325,9 +325,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1473792550}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 932a69941a5dce24d8c0525dbfb02d49, type: 3}
+  m_Script: {fileID: 11500000, guid: c92dde63b3dcf2948a844361c71ec80d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FloorRota: {x: 0, y: 0, z: 0}
 --- !u!65 &1473792552
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -395,8 +396,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1473792550}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.42299563, y: -0.38908195, z: -0.46412432}
   m_LocalScale: {x: 2, y: 0.1, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
