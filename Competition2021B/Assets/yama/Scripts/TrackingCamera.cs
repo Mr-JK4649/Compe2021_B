@@ -27,7 +27,7 @@ public class TrackingCamera : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // ボールが動いているか判断
         BallMoveCheck();
