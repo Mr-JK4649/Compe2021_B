@@ -70,10 +70,22 @@ public class FloorRota2 : MonoBehaviour
         tiltx = Input.GetAxis("Vertical");
         tiltz = Input.GetAxis("Horizontal");
 
-        if (tiltx==1 && tiltz ==1 || tiltx==-1 && tiltz==-1 || tiltx==-1 && tiltz==1 || tiltx==1 && tiltz==-1 || tiltx==0 &&tiltz==0)//斜めの操作を制限
+        if (tiltx==1 && tiltz ==1 || tiltx==-1 && tiltz==-1 || tiltx==-1 && tiltz==1 || tiltx==1 && tiltz==-1)//斜めの操作を制限
         {
-            speed = 0.0f;//speedに0を代入して止める
+            
+            speed = 0.00f;
+
+        }else if(tiltx==0&&tiltz==0){
+            
+                while (speed <= 0)
+                {
+                    speed += -0.005f;
+                }
+
+
+
         }else{
+
             if (speed <= 1.0f)
             {
                 speed += 0.005f;
@@ -84,4 +96,15 @@ public class FloorRota2 : MonoBehaviour
 }
 
 
+//if (tiltx == 0 && tiltz == 0)
+//            {
+//                while (speed >= 0)
+//                {
+//                    speed += -0.05f;
+//                }
+//            }
 
+//    if (speed <= 1.0f)
+//            {
+//                speed += 0.005f;
+//            }
