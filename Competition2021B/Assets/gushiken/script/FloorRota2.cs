@@ -57,6 +57,8 @@ public class FloorRota2 : MonoBehaviour
 
 
         Debug.Log(speed);
+        //Debug.Log(tiltx);
+       // Debug.Log(tiltz);
 
         Quaternion rotate = Quaternion.Euler(FloorRota.x, 0, FloorRota.z);
 
@@ -73,18 +75,26 @@ public class FloorRota2 : MonoBehaviour
         if (tiltx==1 && tiltz ==1 || tiltx==-1 && tiltz==-1 || tiltx==-1 && tiltz==1 || tiltx==1 && tiltz==-1)//斜めの操作を制限
         {
             
-            speed = 0.00f;
+          speed = 0.0f;
 
-        }else if(tiltx==0&&tiltz==0){
-            
-                while (speed <= 0)
+        }else if(tiltx==0&&tiltz==0){//ニュートラルの時
+
+            //if (speed>0) {
+
+                while (speed > 0)
                 {
-                    speed += -0.005f;
-                }
+                    speed += -0.001f;
+               
+                    //speed = 0.0f;
+                } 
+
+                speed = 0.0f;
+          //  }
 
 
 
-        }else{
+        }
+        else{//十字キーを操作している時
 
             if (speed <= 1.0f)
             {
@@ -96,15 +106,3 @@ public class FloorRota2 : MonoBehaviour
 }
 
 
-//if (tiltx == 0 && tiltz == 0)
-//            {
-//                while (speed >= 0)
-//                {
-//                    speed += -0.05f;
-//                }
-//            }
-
-//    if (speed <= 1.0f)
-//            {
-//                speed += 0.005f;
-//            }
