@@ -11,6 +11,7 @@ public class TrackingCamera : MonoBehaviour
     Vector3 BallStartPosDiff;      // ボールの現在地点から移動開始点の差分
     Vector3 count;                 // ボールの移動量
     bool cameraMoveFlg;            // カメラが移動するかを制御　true:移動する    false:移動しない
+    bool cameraPosFitFlg;          // カメラがボールに張り付いたらtrue
 
     public float dis;              // カメラからボールまでの距離
 
@@ -24,6 +25,7 @@ public class TrackingCamera : MonoBehaviour
         BallStartPosDiff = Vector3.zero;
         count = Vector3.zero;
         cameraMoveFlg = false;
+        cameraPosFitFlg = false;
     }
 
     // Update is called once per frame
@@ -54,12 +56,21 @@ public class TrackingCamera : MonoBehaviour
     /// </summary>
     void BallTracking()
     {
-        //trackingCamera.position = new Vector3(ball.position.x + disToBall.x, 
-        //                                      trackingCamera.position.y, 
-        //                                      ball.position.z + disToBall.z);
-        
-        // カメラを徐々にボールに近づける
-        trackingCamera.position = Vector3.Lerp(trackingCamera.position, ball.position + disToBall, 0.005f);
+
+        if (cameraPosFitFlg == true)
+        {
+            trackingCamera.position = new Vector3(ball.position.x + disToBall.x,
+                                                  trackingCamera.position.y,
+                                                  ball.position.z + disToBall.z);
+        }
+        else
+        {
+
+            // カメラを徐々にボールに近づける
+            trackingCamera.position = Vector3.Lerp(trackingCamera.position, ball.position + disToBall, 0.02f);
+            if (trackingCamera.position == ball.position + disToBall)
+                cameraPosFitFlg = true;
+        }
     }
 
     /// <summary>
@@ -108,4 +119,6 @@ public class TrackingCamera : MonoBehaviour
         disToBall = trackingCamera.position - ball.position;
         trackingCamera.SetPositionAndRotation(ball.position + disToBall, ReturnAngle_CameraToBall());
     }
+
+    
 }
