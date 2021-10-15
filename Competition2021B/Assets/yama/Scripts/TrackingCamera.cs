@@ -65,10 +65,13 @@ public class TrackingCamera : MonoBehaviour
         }
         else
         {
-
             // カメラを徐々にボールに近づける
-            trackingCamera.position = Vector3.Lerp(trackingCamera.position, ball.position + disToBall, 0.02f);
-            if (trackingCamera.position == ball.position + disToBall)
+            trackingCamera.position = Vector3.Lerp(trackingCamera.position, 
+                                                   new Vector3(ball.position.x + disToBall.x,
+                                                               trackingCamera.position.y,
+                                                               ball.position.z + disToBall.z), 
+                                                   0.03f);
+            if (trackingCamera.position == (ball.position + disToBall))
                 cameraPosFitFlg = true;
         }
     }
@@ -102,12 +105,12 @@ public class TrackingCamera : MonoBehaviour
             cameraMoveFlg = true;
         }
 
-        if (cameraMoveFlg) {
-            if (dis == 0) {
-                ballStartPos = this.transform.position;
-                cameraMoveFlg = false;
-            }
-        }
+        //if (cameraMoveFlg) {
+        //    if (dis == 0) {
+        //        ballStartPos = this.transform.position;
+        //        cameraMoveFlg = false;
+        //    }
+        //}
 
     }
 
