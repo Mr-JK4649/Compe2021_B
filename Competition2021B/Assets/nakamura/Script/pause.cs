@@ -104,7 +104,10 @@ public class pause : MonoBehaviour
     public void GameEnd()
     {
         Debug.Log("しゅうりょう");
-        //UnityEditor.EditorApplication.isPlaying = false;
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
         UnityEngine.Application.Quit();
+#endif // UNITY_EDITOR
     }
 }
