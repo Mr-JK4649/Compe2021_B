@@ -7,14 +7,15 @@ using UnityEngine.SceneManagement;
 
 public class pause : MonoBehaviour
 {
-    [SerializeField] EventSystem eventSystem;
-    [SerializeField] GameObject canvas;
-    GameObject selectedObj;
-    Button button;
+    [SerializeField] EventSystem eventSystem;   // イベントシステム
+    [SerializeField] GameObject canvas;         // キャンバス
+    GameObject selectedObj;                     // 現在の選択されているオブジェクト
+    Button button;                              // 再選択用ボタン
 
     bool pauseFlg = false;
 
-    [SerializeField] Button firstSelected;
+    [SerializeField] Text cursor;               // カーソル
+    [SerializeField] Button firstSelected;      // 最初に選択されるボタン
 
     void Start()
     {
@@ -47,7 +48,7 @@ public class pause : MonoBehaviour
 
         if(pauseFlg == true)
         {
-            // マウスクリックしたときにフォーカスが離れないようにする処理
+            // マウスクリックしたときにフォーカスが離れないようにする処理 ビルドで効果がないようだ
             if (Input.GetMouseButton(0))
             {
                 button.Select();
@@ -57,7 +58,33 @@ public class pause : MonoBehaviour
                 selectedObj = eventSystem.currentSelectedGameObject.gameObject;
                 button = selectedObj.GetComponent<Button>();
             }
+
+            // カーソル移動
+            switch (selectedObj.name)
+            {
+                case "RestartButton":
+                    cursor.rectTransform.localPosition = new Vector3(-300.0f, 30.0f, 0.0f);
+                    break;
+
+                case "BackTitleButton":
+                    cursor.rectTransform.localPosition = new Vector3(-300.0f, -40.0f, 0.0f);
+                    break;
+
+                case "GameEndButton":
+                    cursor.rectTransform.localPosition = new Vector3(-300.0f, -110.0f, 0.0f);
+                    break;
+
+                case null:
+                    cursor.rectTransform.localPosition = new Vector3(-300.0f, 30.0f, 0.0f);
+                    break;
+            }
+
+            //if (Input.GetKeyDown("joystick button 0"))
+            //{
+            //    eventSystem.sendNavigationEvents = false;
+            //}
         }
+
     }
 
     public void Restart()
@@ -68,6 +95,9 @@ public class pause : MonoBehaviour
 
     public void BackTitle()
     {
+        //GameObject eventSystem = GameObject.Find("EventSystem");
+        //eventSystem.GetComponent<EventSystem>().sendNavigationEvents = true;
+        //Debug.Log(eventSystem.GetComponent<EventSystem>().sendNavigationEvents);
         Debug.Log("たいとる");
     }
 
