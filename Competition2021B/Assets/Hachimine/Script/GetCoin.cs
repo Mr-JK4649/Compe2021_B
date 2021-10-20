@@ -17,10 +17,12 @@ public class GetCoin : MonoBehaviour
     {
 
     }
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider other)
     {
-
-        Debug.Log("Hello World");
-        Destroy(this.gameObject);
+        if (other.gameObject.tag == "Player")
+        {
+            Debug.Log("Hello World");
+            Destroy(this.gameObject);
+        }
     }
 }
