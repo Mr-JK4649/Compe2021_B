@@ -2,25 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GetCoin : MonoBehaviour
+public class CollectCoinpoin : MonoBehaviour
 {
-
-    //int CoinObject = 0;
-
     // Start is called before the first frame update
     void Start()
     {
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
-    }
-    void OnTriggerEnter()
-    {
-
-        Debug.Log("Hello World");
-        Destroy(this.gameObject);
+        
     }
 }

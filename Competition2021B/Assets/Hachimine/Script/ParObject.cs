@@ -1,26 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class GetCoin : MonoBehaviour
+public class ParObject : MonoBehaviour
 {
-
-    //int CoinObject = 0;
-
+    public static int childCoin = 0;
+    int i = 3;
     // Start is called before the first frame update
     void Start()
     {
     }
-
     // Update is called once per frame
     void Update()
     {
+        childCoin = this.transform.childCount; //子オブジェクトを数える
 
-    }
-    void OnTriggerEnter()
-    {
-
-        Debug.Log("Hello World");
-        Destroy(this.gameObject);
+        Debug.Log(childCoin);
     }
 }
