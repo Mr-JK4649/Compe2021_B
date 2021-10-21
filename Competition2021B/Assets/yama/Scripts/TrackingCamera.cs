@@ -10,22 +10,24 @@ public class TrackingCamera : MonoBehaviour
     Vector3 disToBall;             // ボールまでの距離
     Vector3 ballStartPos;          // ボールの移動開始地点
     Vector3 BallStartPosDiff;      // ボールの現在地点から移動開始点の差分
-    Vector3 count;                 // ボールの移動量
+    //Vector3 count;                 // ボールの移動量
+    float interpolationValu;       // ボールとカメラとの距離の補間割合
     bool cameraMoveFlg;            // カメラが移動するかを制御　true:移動する    false:移動しない
     bool cameraPosFitFlg;          // カメラがボールに張り付いたらtrue
 
-    public float dis;              // カメラからボールまでの距離
 
 
     // Start is called before the first frame update
     void Start()
     {
         trackCamera = this.transform;
-        disToBall = new Vector3(0.0f, 0.5f, 0.5f);
+        //disToBall = new Vector3(0.0f, 0.75f, 0.45f);
+        disToBall = new Vector3(0.0f, 0.6f, 0.45f);
         SetCameraPosAndRotation();
         ballStartPos = ball.position;
         BallStartPosDiff = Vector3.zero;
-        count = Vector3.zero;
+        //count = Vector3.zero;
+        interpolationValu = 0.0f;
         cameraMoveFlg = false;
         cameraPosFitFlg = false;
     }
@@ -58,6 +60,7 @@ public class TrackingCamera : MonoBehaviour
     /// </summary>
     void BallTracking()
     {
+        const float addInterValu = 0.03f;    // interpolationValuに加算する値
 
         if (cameraPosFitFlg == true)
         {
@@ -71,10 +74,24 @@ public class TrackingCamera : MonoBehaviour
             trackCamera.position = Vector3.Lerp(trackCamera.position, 
                                                    new Vector3(ball.position.x + disToBall.x,
                                                                trackCamera.position.y,
-                                                               ball.position.z + disToBall.z), 
-                                                   0.05f);
-            if (trackCamera.position == (ball.position + disToBall))
+                                                               ball.position.z + disToBall.z),
+                                                   interpolationValu);
+
+            // ボールからカメラ帆の補間距離を増やす
+            if (interpolationValu < 1.0f)
+                interpolationValu += addInterValu;
+            else
+            {
+                interpolationValu = 1.0f;
                 cameraPosFitFlg = true;
+            }
+            
+            // 
+            //if (Vector2.Distance(new Vector2(trackCamera.position.x, ball.position.x + disToBall.x),
+            //                     new Vector2(trackCamera.position.z, ball.position.z + disToBall.z)) < 0.1f)
+            //{
+            //    cameraPosFitFlg = true;
+            //}
         }
     }
 
@@ -84,25 +101,26 @@ public class TrackingCamera : MonoBehaviour
     /// <returns></returns>
     void BallMoveCheck()
     {
-        Vector3 moveAmount;
+        //Vector3 moveAmount;
+        float dis;              // カメラからボールまでの距離
 
         if (cameraMoveFlg == true)
         {
             return;
         }
 
-        moveAmount = ball.position - (ballStartPos + BallStartPosDiff);
-        BallStartPosDiff += moveAmount;
-        count.x += Mathf.Abs(moveAmount.x);
-        count.y += Mathf.Abs(moveAmount.y);
-        count.z += Mathf.Abs(moveAmount.z);
+        //moveAmount = ball.position - (ballStartPos + BallStartPosDiff);
+        //BallStartPosDiff += moveAmount;
+        //count.x += Mathf.Abs(moveAmount.x);
+        //count.y += Mathf.Abs(moveAmount.y);
+        //count.z += Mathf.Abs(moveAmount.z);
 
 
-        dis = Vector3.Distance(ball.position, ballStartPos);
-        //if(count.x + count.y + count.z > 0.15f)
+        //if (count.x + count.y + count.z > 0.15f)
         //{
         //    cameraMoveFlg = true;
         //}
+        dis = Vector3.Distance(ball.position, ballStartPos);
         if (dis > 0.15f) {
             cameraMoveFlg = true;
         }
