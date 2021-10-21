@@ -8,8 +8,14 @@ public class FloorRota2 : MonoBehaviour
     public Vector3 FloorRota = new Vector3(0,0,0);
 
     public float speed = 0;
-    private float tiltx=0;
-    private float tiltz=0;
+
+    private float testFlame = 0;
+
+    private float tiltx=0; //x軸の傾いている方向を入れる
+    private float tiltz=0; //y軸の傾いている方向を入れる
+    //private float adc = speed / 60;
+
+    //private float Pspeed =;
 
 
 
@@ -22,12 +28,13 @@ public class FloorRota2 : MonoBehaviour
    
 
 
-    void Update()
+    void FixedUpdate()
     {
         //ここらへん
         TiltSpeed();
         FloorRota.x += speed*-Input.GetAxis("Vertical");
         FloorRota.z += speed* Input.GetAxis("Horizontal");
+
 
 
         if (FloorRota.x > 30)       //**xの傾きをを制限かける処理
@@ -60,15 +67,20 @@ public class FloorRota2 : MonoBehaviour
         //Debug.Log(tiltx);
        // Debug.Log(tiltz);
 
-        Quaternion rotate = Quaternion.Euler(FloorRota.x, 0, FloorRota.z);
+        //Quaternion rotate = Quaternion.Euler(FloorRota.x, 0, FloorRota.z);
 
-        this.transform.rotation = rotate;
+        transform.rotation = Quaternion.Euler(FloorRota.x, 0, FloorRota.z);
+
+        //this.transform.rotation = rotate;
 
 
     }
 
     void TiltSpeed()//床の傾きのスピードの処理
     {
+
+        float OneFlamemove = 30.0f/8100.0f;  //水平から30度までの
+
         tiltx = Input.GetAxis("Vertical");
         tiltz = Input.GetAxis("Horizontal");
 
@@ -79,28 +91,74 @@ public class FloorRota2 : MonoBehaviour
 
         }else if(tiltx==0&&tiltz==0){//ニュートラルの時
 
-            //if (speed>0) {
+            if (speed>0)
+            {
 
-                while (speed > 0)
+            }
+
+            if (FloorRota.x!=0||FloorRota.z!=0) {///////傾いていたら
+
+                ///////////**************x軸を0に戻す処理
+                if (FloorRota.x < 0)
                 {
-                    speed += -0.001f;
-               
-                    //speed = 0.0f;
-                } 
+                    FloorRota.x += 0.3f;
+                    if (FloorRota.x > 0)
+                    {
+                        FloorRota.x = 0.0f;
+                    }
+                }
+                if (FloorRota.x > 0)
+                {
+                    FloorRota.x -= 0.3f;
+                    if (FloorRota.x < 0)
+                    {
+                        FloorRota.x = 0.0f;
+                    }
+                }
+                /////////*******************ここまで
 
-                speed = 0.0f;
-          //  }
+                ///////////----------------------z軸を0に戻す処理
+                if (FloorRota.z < 0)
+                {
+                    FloorRota.z += 0.3f;
+                    if (FloorRota.z > 0)
+                    {
+                        FloorRota.z = 0.0f;
+                    }
+                }
+                if (FloorRota.z > 0)
+                {
+                    FloorRota.z -= 0.3f;
+                    if (FloorRota.z < 0)
+                    {
+                        FloorRota.z = 0.0f;
+                    }
+                }
+                /////////--------------------------ここまで
 
-
+                Debug.Log(OneFlamemove);
+            }/////////傾いていたら
 
         }
         else{//十字キーを操作している時
+            testFlame++;
+         
+            speed += OneFlamemove;
 
-            if (speed <= 1.0f)
+            if (FloorRota.x>=30)
             {
-                speed += 0.005f;
+                Debug.Log(testFlame);
             }
+
+
+
+            Debug.Log(testFlame);
         }
+    }
+
+    void Frame()
+    {
+
     }
 
 }

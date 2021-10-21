@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class TrackingCamera : MonoBehaviour
 {
-    Transform trackingCamera;      // カメラのトランスフォーム
+    Transform trackCamera;         // カメラのトランスフォーム
     public Transform ball;         // ボールのトランスフォーム
     Vector3 disToBall;             // ボールまでの距離
     Vector3 ballStartPos;          // ボールの移動開始地点
@@ -19,7 +20,8 @@ public class TrackingCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        trackingCamera = this.transform; 
+        trackCamera = this.transform;
+        disToBall = new Vector3(0.0f, 0.5f, 0.5f);
         SetCameraPosAndRotation();
         ballStartPos = ball.position;
         BallStartPosDiff = Vector3.zero;
@@ -45,7 +47,7 @@ public class TrackingCamera : MonoBehaviour
     {
         Quaternion angle;
 
-        angle = Quaternion.LookRotation(ball.position - trackingCamera.position);
+        angle = Quaternion.LookRotation(ball.position - (trackCamera.position + disToBall));
 
         return angle;
     } 
@@ -59,19 +61,19 @@ public class TrackingCamera : MonoBehaviour
 
         if (cameraPosFitFlg == true)
         {
-            trackingCamera.position = new Vector3(ball.position.x + disToBall.x,
-                                                  trackingCamera.position.y,
+            trackCamera.position = new Vector3(ball.position.x + disToBall.x,
+                                                  trackCamera.position.y,
                                                   ball.position.z + disToBall.z);
         }
         else
         {
             // カメラを徐々にボールに近づける
-            trackingCamera.position = Vector3.Lerp(trackingCamera.position, 
+            trackCamera.position = Vector3.Lerp(trackCamera.position, 
                                                    new Vector3(ball.position.x + disToBall.x,
-                                                               trackingCamera.position.y,
+                                                               trackCamera.position.y,
                                                                ball.position.z + disToBall.z), 
-                                                   0.03f);
-            if (trackingCamera.position == (ball.position + disToBall))
+                                                   0.05f);
+            if (trackCamera.position == (ball.position + disToBall))
                 cameraPosFitFlg = true;
         }
     }
@@ -119,9 +121,9 @@ public class TrackingCamera : MonoBehaviour
     /// </summary>
     void SetCameraPosAndRotation()
     {
-        disToBall = trackingCamera.position - ball.position;
-        trackingCamera.SetPositionAndRotation(ball.position + disToBall, ReturnAngle_CameraToBall());
+        trackCamera.position = ball.position;
+        //trackCamera.position += disToBall;
+        //disToBall = trackCamera.position - ball.position;
+        trackCamera.SetPositionAndRotation(ball.position + disToBall, ReturnAngle_CameraToBall());
     }
-
-    
 }
