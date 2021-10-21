@@ -22,7 +22,7 @@ public class TrackingCamera : MonoBehaviour
     {
         trackCamera = this.transform;
         //disToBall = new Vector3(0.0f, 0.75f, 0.45f);
-        disToBall = new Vector3(0.0f, 0.6f, 0.45f);
+        disToBall = new Vector3(0.0f, 0.7f, 0.48f);
         SetCameraPosAndRotation();
         ballStartPos = ball.position;
         BallStartPosDiff = Vector3.zero;
