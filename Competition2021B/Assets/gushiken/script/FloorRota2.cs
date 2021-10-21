@@ -10,6 +10,7 @@ public class FloorRota2 : MonoBehaviour
     public float speed = 0;
 
     private float testFlame = 0;
+    private float Box = 0.0f;
 
     private float tiltx=0; //x軸の傾いている方向を入れる
     private float tiltz=0; //y軸の傾いている方向を入れる
@@ -80,6 +81,7 @@ public class FloorRota2 : MonoBehaviour
     {
 
         float OneFlamemove = 30.0f/8100.0f;  //水平から30度までの
+        
 
         tiltx = Input.GetAxis("Vertical");
         tiltz = Input.GetAxis("Horizontal");
@@ -101,17 +103,25 @@ public class FloorRota2 : MonoBehaviour
                 ///////////**************x軸を0に戻す処理
                 if (FloorRota.x < 0)
                 {
-                    FloorRota.x += 0.3f;
+                    //FloorRota.x += 0.3f;
+                    Box +=OneFlamemove;
+                    FloorRota.x += Box;
                     if (FloorRota.x > 0)
                     {
+                        Box = 0.0f;
+                        speed = 0.0f;
                         FloorRota.x = 0.0f;
                     }
                 }
                 if (FloorRota.x > 0)
                 {
-                    FloorRota.x -= 0.3f;
+                    //FloorRota.x -= 0.3f;
+                    Box += OneFlamemove;
+                    FloorRota.x -= Box;
                     if (FloorRota.x < 0)
                     {
+                        Box = 0.0f;
+                        speed = 0.0f;
                         FloorRota.x = 0.0f;
                     }
                 }
@@ -120,23 +130,31 @@ public class FloorRota2 : MonoBehaviour
                 ///////////----------------------z軸を0に戻す処理
                 if (FloorRota.z < 0)
                 {
-                    FloorRota.z += 0.3f;
+                    //FloorRota.z += 0.3f;
+                    Box += OneFlamemove;
+                    FloorRota.z += Box;
                     if (FloorRota.z > 0)
                     {
+                        Box = 0.0f;
+                        speed = 0.0f;
                         FloorRota.z = 0.0f;
                     }
                 }
                 if (FloorRota.z > 0)
                 {
-                    FloorRota.z -= 0.3f;
+                    //FloorRota.z -= 0.3f;
+                    Box += OneFlamemove;
+                    FloorRota.z -= Box;
                     if (FloorRota.z < 0)
                     {
+                        Box = 0.0f;
+                        speed = 0.0f;
                         FloorRota.z = 0.0f;
                     }
                 }
                 /////////--------------------------ここまで
 
-                Debug.Log(OneFlamemove);
+                Debug.Log(Box);
             }/////////傾いていたら
 
         }
@@ -152,7 +170,7 @@ public class FloorRota2 : MonoBehaviour
 
 
 
-            Debug.Log(testFlame);
+           // Debug.Log(testFlame);
         }
     }
 
