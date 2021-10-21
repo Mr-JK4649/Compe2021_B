@@ -4,10 +4,23 @@ using UnityEngine;
 
 public class BallGravity : MonoBehaviour
 {
-    [SerializeField] private float gravity = 0f;
-    [SerializeField,Tooltip("落ちる速さ(毎秒毎秒)")] private float speed = 0f;
-    [SerializeField] private bool isFall = true;
-    [SerializeField] private bool isWall = false;
+    //現在の落下力
+    private float gravity = 0f;
+
+    [SerializeField,Tooltip("落ちる力(毎秒毎秒)")] 
+    private float speed = 0f;
+
+    [SerializeField,Tooltip("反射時の速度減衰(高い程減衰)")]
+    private float refAtt = 0f;
+
+    [SerializeField, Tooltip("摩擦による速度減衰(高い程減衰)")]
+    private float friAtt = 0f;
+
+    //落下中フラグ
+    private bool isFall = true;
+
+    //壁衝突フラグ
+    private bool isWall = false;
 
     //自身のRididBody
     private Rigidbody rb;
@@ -15,6 +28,7 @@ public class BallGravity : MonoBehaviour
     //床の法線ベクトルのやし
     public GetNormals gn;
 
+    //移動力
     public float spd;
 
     //進行方向
@@ -45,9 +59,14 @@ public class BallGravity : MonoBehaviour
             moveVec.z += floorNor.z * spd * Time.deltaTime;
         }
         if (isWall) {
-            moveVec.x /= 2.0f;
-            moveVec.y /= 2.0f;
-            moveVec.z /= 2.0f;
+            moveVec.x /= refAtt;
+            moveVec.y /= refAtt;
+            moveVec.z /= refAtt;
+        }
+
+        //傾き0だったばあい速度を減衰していく
+        if (floorNor.y == 1.0f) {
+            moveVec = Vector3.Lerp(moveVec, Vector3.zero, friAtt);
         }
 
 
