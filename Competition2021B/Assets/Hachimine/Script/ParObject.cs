@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ParObject : MonoBehaviour
 {
     public static int childCoin = 0;
-    int i = 3;
+    //int i = 3;
     // Start is called before the first frame update
     void Start()
     {
