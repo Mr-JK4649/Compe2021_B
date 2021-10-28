@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 public class CoinGetText : MonoBehaviour
 {
 
@@ -13,6 +15,8 @@ public class CoinGetText : MonoBehaviour
 
     [SerializeField] GameObject GameClear; //ゲームクリアキャンバス
 
+
+    //bool GameRestart=false;
 
     GameObject PlayerSphere;
     PlayerPoint playerpoint;
@@ -47,12 +51,20 @@ public class CoinGetText : MonoBehaviour
         {
             GameClear.SetActive(true);
             Time.timeScale = 0;
+            for (int i = 0; i < 50; i++)
+            {
+                Restart();
+                Debug.Log("5001");
+            }
+            
         }
-
 
         //Debug.Log(CoinCollect_Point);
     }
-
+    void Restart()
+    {
+        SceneManager.LoadScene("TitleScene");
+    }
 
 
 
