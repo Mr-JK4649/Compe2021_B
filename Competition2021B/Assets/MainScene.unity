@@ -832,6 +832,36 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5744188302130646076, guid: dbe18685ade59d945821497e8a013139,
+        type: 3}
+      propertyPath: m_Text
+      value: GAME CLEAR
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744188303397617264, guid: dbe18685ade59d945821497e8a013139,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744188303397617264, guid: dbe18685ade59d945821497e8a013139,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744188303397617264, guid: dbe18685ade59d945821497e8a013139,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.41960788
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744188303397617264, guid: dbe18685ade59d945821497e8a013139,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744188303397617264, guid: dbe18685ade59d945821497e8a013139,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.43631986
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbe18685ade59d945821497e8a013139, type: 3}
 --- !u!1 &931193807
