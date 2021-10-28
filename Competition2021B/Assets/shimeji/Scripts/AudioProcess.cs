@@ -19,8 +19,9 @@ public class AudioProcess : MonoBehaviour
 
     private void Update()
     {
-        if (pauseCls.IsPause()) bgmAudioSource.Stop();
-        if (!pauseCls.IsPause()) bgmAudioSource.Play();
+        if (pauseCls.IsPause() == true) bgmAudioSource.Stop();
+        else if(!bgmAudioSource.isPlaying)bgmAudioSource.Play();
+        Debug.Log(pauseCls.IsPause());
         
     }
 
