@@ -4,18 +4,21 @@ using UnityEngine;
 using UnityEngine.UI;
 public class CoinGetText : MonoBehaviour
 {
-    
-   /* GameObject CoinGrope; 
-    ParObject Coin_Collect;
-    GameObject coin;
-    GetCoin coin_Qua;
-    */
+
+    /* GameObject CoinGrope; 
+     ParObject Coin_Collect;
+     GameObject coin;
+     GetCoin coin_Qua;
+     */
+
+    [SerializeField] GameObject GameClear; //ゲームクリアキャンバス
+
+
     GameObject PlayerSphere;
     PlayerPoint playerpoint;
     
 
-
-    public GameObject disa_coin = null; //textオブジェクト
+    public GameObject disa_coin = null; //コイン数のテキスト
     public int CoinCollect_Point = 0;
 
     
@@ -27,21 +30,31 @@ public class CoinGetText : MonoBehaviour
         coin = GameObject.FindGameObjectWithTag("coin");
         coin_Qua = coin.GetComponent<GetCoin>();
        */
-        PlayerSphere = GameObject.Find("Sphere");
+        PlayerSphere = GameObject.Find("Ball");
         playerpoint = PlayerSphere.GetComponent<PlayerPoint>();
 
     }
 
     // Update is called once per frame
     void Update()
-    {
-       
-        
+    {   
         //オブジェクトからTextコンポーネントを取得
         Text disa_Text = disa_coin.GetComponent<Text>();
         //テキストの表示を入れ替える
         disa_Text.text =  CoinCollect_Point + "/ 12";
 
+        if (CoinCollect_Point == 12)
+        {
+            GameClear.SetActive(true);
+            Time.timeScale = 0;
+        }
+
+
         //Debug.Log(CoinCollect_Point);
     }
+
+
+
+
+
 }
