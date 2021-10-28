@@ -155,7 +155,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 1645358527}
-  dis: 0
 --- !u!114 &8798708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1288,6 +1287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seClip:
   - {fileID: 8300000, guid: 5a5e622a103d0e44388267c56d5fb5f3, type: 3}
+  bgmAudioSource: {fileID: 8798712}
 --- !u!1 &898802075
 GameObject:
   m_ObjectHideFlags: 0
