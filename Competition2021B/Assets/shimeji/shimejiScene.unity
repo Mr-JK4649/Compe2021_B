@@ -694,7 +694,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &607981333
 Transform:
   m_ObjectHideFlags: 0
@@ -2546,6 +2546,7 @@ MonoBehaviour:
   friAtt: 0.01
   gn: {fileID: 1205622930}
   spd: 0.05
+  moveVec: {x: 0, y: 0, z: 0}
   ap: {fileID: 882275178}
 --- !u!54 &1645358529
 Rigidbody:

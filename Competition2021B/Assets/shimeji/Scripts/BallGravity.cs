@@ -32,6 +32,7 @@ public class BallGravity : MonoBehaviour
     public float spd;
 
     //進行方向
+    [SerializeField]
     private Vector3 moveVec;
 
     //床の法線
@@ -60,18 +61,22 @@ public class BallGravity : MonoBehaviour
             moveVec.x += floorNor.x * spd * Time.deltaTime;
             moveVec.z += floorNor.z * spd * Time.deltaTime;
         }
-        if (isWall) {
-            moveVec.x /= refAtt;
-            moveVec.y /= refAtt;
-            moveVec.z /= refAtt;
-        }
+        //if (isWall && moveVec.x + moveVec.z <= 1.0f) {
+        //    moveVec.x /= refAtt;
+        //    moveVec.y /= refAtt;
+        //    moveVec.z /= refAtt;
+        //}
 
-        //傾き0だったばあい速度を減衰していく
-        if (floorNor.y == 1.0f) {
+        
+        if (floorNor.y == 1.0f)//傾き0だったばあい速度を減衰していく
+        {
             moveVec = Vector3.Lerp(moveVec, Vector3.zero, friAtt);
         }
+        else {                 //それ以外の場合、摩擦による速度減衰
+            moveVec = Vector3.Lerp(moveVec, Vector3.zero, friAtt/2.0f);
+        }
 
-
+        //重力
         if (isFall)
         {
             moveVec.y = gravity;
@@ -82,6 +87,8 @@ public class BallGravity : MonoBehaviour
         }
 
         this.transform.position += moveVec;
+
+        Debug.DrawRay(this.transform.position, moveVec*10,new Color(255,0,0));
 
     }
 
