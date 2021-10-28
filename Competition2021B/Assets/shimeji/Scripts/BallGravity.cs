@@ -37,6 +37,8 @@ public class BallGravity : MonoBehaviour
     //床の法線
     private Vector3 floorNor;
 
+    public AudioProcess ap;
+
     private void Start()
     {
         rb = this.GetComponent<Rigidbody>();
@@ -95,6 +97,7 @@ public class BallGravity : MonoBehaviour
             Vector3 wn = collision.contacts[0].normal;
             moveVec = Vector3.Reflect(moveVec, wn);
             Debug.Log(wn);
+            ap.ShotSE(0);
         }
 
     }
