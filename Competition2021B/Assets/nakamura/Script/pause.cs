@@ -10,7 +10,6 @@ public class pause : MonoBehaviour
     [SerializeField] EventSystem eventSystem;   // イベントシステム
     [SerializeField] GameObject canvas;         // キャンバス
     GameObject selectedObj;                     // 現在の選択されているオブジェクト
-    Button button;                              // 再選択用ボタン
 
     bool pauseFlg = false;
 
@@ -48,18 +47,9 @@ public class pause : MonoBehaviour
 
         if(pauseFlg == true)
         {
-            // マウスクリックしたときにフォーカスが離れないようにする処理 ビルドで効果がないようだ
-            if (Input.GetMouseButton(0))
-            {
-                button.Select();
-            }
-            else
-            {
-                selectedObj = eventSystem.currentSelectedGameObject.gameObject;
-                button = selectedObj.GetComponent<Button>();
-            }
 
             // カーソル移動
+            selectedObj = eventSystem.currentSelectedGameObject.gameObject;
             switch (selectedObj.name)
             {
                 case "RestartButton":
@@ -79,10 +69,6 @@ public class pause : MonoBehaviour
                     break;
             }
 
-            //if (Input.GetKeyDown("joystick button 0"))
-            //{
-            //    eventSystem.sendNavigationEvents = false;
-            //}
         }
 
     }
@@ -95,10 +81,8 @@ public class pause : MonoBehaviour
 
     public void BackTitle()
     {
-        //GameObject eventSystem = GameObject.Find("EventSystem");
-        //eventSystem.GetComponent<EventSystem>().sendNavigationEvents = true;
-        //Debug.Log(eventSystem.GetComponent<EventSystem>().sendNavigationEvents);
         Debug.Log("たいとる");
+        SceneManager.LoadScene("TitleScene");
     }
 
     public void GameEnd()
