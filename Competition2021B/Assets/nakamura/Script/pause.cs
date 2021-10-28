@@ -70,7 +70,12 @@ public class pause : MonoBehaviour
             }
 
         }
+    }
 
+    // ポーズのフラグを取得
+    public bool IsPause()
+    {
+        return pauseFlg;
     }
 
     public void Restart()
@@ -82,6 +87,8 @@ public class pause : MonoBehaviour
     public void BackTitle()
     {
         Debug.Log("たいとる");
+        //SceneManager.sceneLoaded += GameSceneLoaded;
+
         SceneManager.LoadScene("TitleScene");
     }
 
@@ -94,4 +101,10 @@ public class pause : MonoBehaviour
         UnityEngine.Application.Quit();
 #endif // UNITY_EDITOR
     }
+
+    //private void GameSceneLoaded(Scene next, LoadSceneMode mode)
+    //{
+    //    // イベントから削除
+    //    SceneManager.sceneLoaded -= GameSceneLoaded;
+    //}
 }
