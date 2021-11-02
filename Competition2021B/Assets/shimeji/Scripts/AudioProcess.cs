@@ -4,6 +4,25 @@ using UnityEngine;
 
 public class AudioProcess : MonoBehaviour
 {
+    public enum Object
+    {
+        Ball = 0,
+        Wall,
+        Floor,
+        Coin
+    }
+
+    public enum Kind
+    { 
+        Enter,
+        Exit,
+        Stay
+    }
+
+    public Kind kind;
+    public Object objectA;
+    public Object objectB;
+
     private AudioSource audioSource;
     public AudioSource bgmAudioSource;
     public AudioClip[] seClip;

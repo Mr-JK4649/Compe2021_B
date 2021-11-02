@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44382012, g: 0.4931773, b: 0.5726913, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -1383,6 +1383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea28801e9b14076498c35654b0ec038e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgmAudioSource: {fileID: 0}
   seClip:
   - {fileID: 8300000, guid: 5a5e622a103d0e44388267c56d5fb5f3, type: 3}
 --- !u!4 &1993334674
@@ -2803,6 +2804,7 @@ MonoBehaviour:
   friAtt: 0.01
   gn: {fileID: 6203253841018011469}
   spd: 0.05
+  moveVec: {x: 0, y: 0, z: 0}
   ap: {fileID: 1993334673}
 --- !u!114 &6686675755391153663
 MonoBehaviour:
