@@ -16,16 +16,17 @@ public class pause : MonoBehaviour
     [SerializeField] Text cursor;               // カーソル
     [SerializeField] Button firstSelected;      // 最初に選択されるボタン
 
+    [SerializeField] GameObject clear;
     void Start()
     {
         pauseFlg = false;
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
     }
 
     void Update()
     {
 
-        if (Input.GetKeyDown("joystick button 7"))
+        if (Input.GetKeyDown("joystick button 7") && clear.activeInHierarchy == false)
         {
             if (pauseFlg == false)
             {
