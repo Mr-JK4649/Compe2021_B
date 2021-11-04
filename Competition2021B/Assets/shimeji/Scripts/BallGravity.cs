@@ -54,26 +54,19 @@ public class BallGravity : MonoBehaviour
             rb.WakeUp();
         }
         
-        //壁に当たってなければ床の斜面に沿って移動する
-        //当たった場合速度を減衰させる
-        if (!isWall)
-        {
-            moveVec.x += floorNor.x * spd * Time.deltaTime;
-            moveVec.z += floorNor.z * spd * Time.deltaTime;
-        }
-        //if (isWall && moveVec.x + moveVec.z <= 1.0f) {
-        //    moveVec.x /= refAtt;
-        //    moveVec.y /= refAtt;
-        //    moveVec.z /= refAtt;
-        //}
+        //斜面に沿って移動する
+        moveVec.x += floorNor.x * spd * Time.deltaTime;
+        moveVec.z += floorNor.z * spd * Time.deltaTime;
 
         
-        if (floorNor.y == 1.0f)//傾き0だったばあい速度を減衰していく
+        if (floorNor.y == 1.0f && moveVec != Vector3.zero)//傾き0だったばあい速度を減衰していく
         {
             moveVec = Vector3.Lerp(moveVec, Vector3.zero, friAtt);
+            if (moveVec.x + moveVec.y <= 0.0005f)
+                moveVec = Vector3.zero;
         }
-        else {                 //それ以外の場合、摩擦による速度減衰
-            moveVec = Vector3.Lerp(moveVec, Vector3.zero, friAtt/2.0f);
+        else if(moveVec != Vector3.zero){                 //それ以外の場合、摩擦による速度減衰
+            moveVec = Vector3.Lerp(moveVec, Vector3.zero, friAtt/5.0f);
         }
 
         //重力
@@ -86,7 +79,8 @@ public class BallGravity : MonoBehaviour
             gravity = 0;
         }
 
-        this.transform.position += moveVec;
+        if(moveVec != Vector3.zero)
+            this.transform.position += moveVec;
 
         Debug.DrawRay(this.transform.position, moveVec*10,new Color(255,0,0));
 

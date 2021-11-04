@@ -48,4 +48,8 @@ public class AudioProcess : MonoBehaviour
         if(num < seClip.Length)
             audioSource.PlayOneShot(seClip[num]);
     }
+
+    public void SSSSS(AudioSource aas, AudioClip aac) {
+        aas.PlayOneShot(aac);
+    }
 }

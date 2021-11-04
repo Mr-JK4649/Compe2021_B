@@ -1423,7 +1423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 079c47f5a81db334ba9457e03693739d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  te:
+  seEve:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &898802075
@@ -1813,7 +1813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 401163d2dc898c043a91f38d35994214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ray: 0
+  ray: 1
 --- !u!65 &1205622931
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2562,7 +2562,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.098
   refAtt: 1.5
-  friAtt: 0.01
+  friAtt: 0.05
   gn: {fileID: 1205622930}
   spd: 0.05
   moveVec: {x: 0, y: 0, z: 0}
