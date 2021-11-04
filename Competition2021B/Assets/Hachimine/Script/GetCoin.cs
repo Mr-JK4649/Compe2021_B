@@ -6,6 +6,7 @@ public class GetCoin : MonoBehaviour
 {
     GameObject CoinText;
     CoinGetText GetPointText;
+    public GameObject getCoinFX;
 
 
     //int CoinObject = 0;
@@ -25,6 +26,9 @@ public class GetCoin : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("Hello World");
+
+            Instantiate(getCoinFX, this.transform.position, Quaternion.identity);
+
             Destroy(this.gameObject);
         }
     }
