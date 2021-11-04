@@ -1235,7 +1235,7 @@ MonoBehaviour:
   kind: 0
   objectA: 0
   objectB: 0
-  bgmAudioSource: {fileID: 0}
+  bgmAudioSource: {fileID: 931193813}
   seClip:
   - {fileID: 8300000, guid: 5a5e622a103d0e44388267c56d5fb5f3, type: 3}
 --- !u!4 &1993334674
@@ -1757,6 +1757,7 @@ MonoBehaviour:
   cursor: {fileID: 4541036673198630416}
   firstSelected: {fileID: 650631196695890736}
   clear: {fileID: 5744188301601236085}
+  ap: {fileID: 0}
 --- !u!1 &650631195884165059
 GameObject:
   m_ObjectHideFlags: 0

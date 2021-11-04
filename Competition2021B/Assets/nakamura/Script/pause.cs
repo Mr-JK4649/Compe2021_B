@@ -17,6 +17,9 @@ public class pause : MonoBehaviour
     [SerializeField] Button firstSelected;      // 最初に選択されるボタン
 
     [SerializeField] GameObject clear;
+
+    public AudioProcess ap;
+
     void Start()
     {
         pauseFlg = false;
@@ -26,7 +29,7 @@ public class pause : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown("joystick button 7") && clear.activeInHierarchy == false)
+        if ((Input.GetKeyDown("joystick button 7") || Input.GetKeyDown(KeyCode.T)) && clear.activeInHierarchy == false)
         {
             if (pauseFlg == false)
             {

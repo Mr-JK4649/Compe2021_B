@@ -24,7 +24,7 @@ public class AudioProcess : MonoBehaviour
     public Object objectB;
 
     private AudioSource audioSource;
-    public AudioSource bgmAudioSource;
+    private AudioSource bgmAudioSource;
     public AudioClip[] seClip;
 
     //ポーズ処理
@@ -34,13 +34,15 @@ public class AudioProcess : MonoBehaviour
     {
         audioSource = this.GetComponent<AudioSource>();
         pauseCls = GameObject.Find("Pause").GetComponent<pause>();
+        bgmAudioSource = GameObject.Find("Main Camera").GetComponent<AudioSource>();
     }
 
     private void Update()
     {
-        if (pauseCls.IsPause() == true) bgmAudioSource.Pause();
-        else if(!bgmAudioSource.isPlaying)bgmAudioSource.Play();
-        Debug.Log(pauseCls.IsPause());
+        bool ip = pauseCls.IsPause();
+        if (ip) bgmAudioSource.Pause();
+        else if(!bgmAudioSource.isPlaying && !ip)bgmAudioSource.Play();
+        Debug.Log(ip);
         
     }
 
