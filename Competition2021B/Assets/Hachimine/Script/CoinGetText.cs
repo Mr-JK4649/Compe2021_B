@@ -20,11 +20,9 @@ public class CoinGetText : MonoBehaviour
 
     GameObject PlayerSphere;
     PlayerPoint playerpoint;
-    
 
     public GameObject disa_coin = null; //コイン数のテキスト
     public int CoinCollect_Point = 0;
-
     
     // Start is called before the first frame update
     void Start()
@@ -36,7 +34,6 @@ public class CoinGetText : MonoBehaviour
        */
         PlayerSphere = GameObject.Find("Ball");
         playerpoint = PlayerSphere.GetComponent<PlayerPoint>();
-
     }
 
     // Update is called once per frame
@@ -51,11 +48,11 @@ public class CoinGetText : MonoBehaviour
         {
             GameClear.SetActive(true);
             Time.timeScale = 0;
-            for (int i = 0; i < 50; i++)
-            {
-                Restart();
-                Debug.Log("5001");
-            }
+            //for (int i = 0; i < 50; i++)
+            //{
+            //    Restart();
+            //    Debug.Log("5001");
+            //}
             
         }
 
@@ -63,10 +60,7 @@ public class CoinGetText : MonoBehaviour
     }
     void Restart()
     {
-        SceneManager.LoadScene("TitleScene");
+        //SceneManager.LoadScene("TitleScene");
     }
-
-
-
 
 }
