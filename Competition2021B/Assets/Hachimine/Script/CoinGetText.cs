@@ -67,11 +67,6 @@ public class CoinGetText : MonoBehaviour
                 GameClear.SetActive(false);
                 PointResult.SetActive(false);
                 GameResult.SetActive(true);
-                //for (int i = 0; i < 50; i++)
-                //{
-                //    Restart();
-                //    Debug.Log("5001");
-                //}
             }
         }
         //Debug.Log(CoinCollect_Point);
