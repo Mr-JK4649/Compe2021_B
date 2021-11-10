@@ -29,7 +29,7 @@ public class CoinGetText : MonoBehaviour
 
     public int CoinCollect_Point = 0;
 
-    private int ResultStart;
+   public int ResultStart;
     // Start is called before the first frame update
     void Start()
     {
@@ -62,16 +62,17 @@ public class CoinGetText : MonoBehaviour
             GameClear.SetActive(true);
             Time.timeScale = 0;
             ResultStart++;
-            if (ResultStart < 60)
-            GameResult.SetActive(true);
-            GameClear.SetActive(false);
-            PointResult.SetActive(false);
-            //for (int i = 0; i < 50; i++)
-            //{
-            //    Restart();
-            //    Debug.Log("5001");
-            //}
-
+            if (ResultStart == 60)
+            {
+                GameClear.SetActive(false);
+                PointResult.SetActive(false);
+                GameResult.SetActive(true);
+                //for (int i = 0; i < 50; i++)
+                //{
+                //    Restart();
+                //    Debug.Log("5001");
+                //}
+            }
         }
         //Debug.Log(CoinCollect_Point);
     }
