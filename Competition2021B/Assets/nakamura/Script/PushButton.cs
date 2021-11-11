@@ -8,7 +8,10 @@ public class PushButton : MonoBehaviour
 
     void Update()
     {
-        
+        if(Input.anyKeyDown)
+        {
+            SceneManager.LoadScene("MainScene");
+        }
     }
 
     public void NextMain()
