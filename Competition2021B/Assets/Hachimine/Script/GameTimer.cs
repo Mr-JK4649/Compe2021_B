@@ -25,7 +25,7 @@ public class GameTimer : MonoBehaviour
         Text minute_text = minute_tx.GetComponent<Text>();
         //Text seconds_text = seconds_tx.GetComponent<Text>();
 
-        minute_text.text = minute.ToString("00") + ":"+((int)seconds).ToString("00");
+        minute_text.text = "かかった時間" + "   "+ minute.ToString("0") + ":"+((int)seconds).ToString("00");
     }
 
     void FixedUpdate()
