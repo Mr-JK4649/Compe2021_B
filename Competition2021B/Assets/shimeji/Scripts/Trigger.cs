@@ -11,7 +11,6 @@ public class Trigger : MonoBehaviour
         Floor
     }
 
-    [SerializeField] AudioClip ac;
     [SerializeField] Kind objTag;
     [SerializeField] AudioSource ass;
 
@@ -40,7 +39,7 @@ public class Trigger : MonoBehaviour
     //public void OnCollisionExit (Collision other){ onConEx.Invoke();}
     //public void OnCollisionStay (Collision other){ onConSt.Invoke();}
 
-    public void RingSound() {
+    public void RingSound(AudioClip ac) {
         ass.PlayOneShot(ac);
     }
 

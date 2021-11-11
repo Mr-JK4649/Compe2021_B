@@ -1464,7 +1464,6 @@ GameObject:
   - component: {fileID: 882275176}
   - component: {fileID: 882275177}
   - component: {fileID: 882275178}
-  - component: {fileID: 882275179}
   m_Layer: 0
   m_Name: MusicBox
   m_TagString: Untagged
@@ -1600,30 +1599,6 @@ MonoBehaviour:
   objectB: 0
   seClip:
   - {fileID: 8300000, guid: 5a5e622a103d0e44388267c56d5fb5f3, type: 3}
---- !u!114 &882275179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 882275175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 079c47f5a81db334ba9457e03693739d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ac: {fileID: 0}
-  objTag: 
-  ass: {fileID: 0}
-  seColEnt:
-    m_PersistentCalls:
-      m_Calls: []
-  seColStay:
-    m_PersistentCalls:
-      m_Calls: []
-  seTriEnt:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &898802075
 GameObject:
   m_ObjectHideFlags: 0
@@ -2930,7 +2905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ac: {fileID: 8300000, guid: 5a5e622a103d0e44388267c56d5fb5f3, type: 3}
-  objTag: coin
+  objTag: 0
   ass: {fileID: 882275177}
   seColEnt:
     m_PersistentCalls:
