@@ -9,6 +9,10 @@ public class StartCountDown : MonoBehaviour
     [SerializeField] GameObject pauseMenu;
     [SerializeField] Text text;
 
+    Trigger trigger;
+    [SerializeField] AudioClip count;
+    [SerializeField] AudioClip start;
+
     void Start()
     {
         Time.timeScale = 0;
@@ -16,23 +20,29 @@ public class StartCountDown : MonoBehaviour
         pauseMenu = GameObject.Find("Pause");
         pauseMenu.SetActive(false);
 
+        trigger = GameObject.Find("Ball").GetComponent<Trigger>();
+
         StartCoroutine("CountDown");
     }
 
     private IEnumerator CountDown()
     {
+        trigger.RingSound(count);
         text.text = "3";
 
         yield return new WaitForSecondsRealtime(1.0f);
 
+        trigger.RingSound(count);
         text.text = "2";
 
         yield return new WaitForSecondsRealtime(1.0f);
 
+        trigger.RingSound(count);
         text.text = "1";
 
         yield return new WaitForSecondsRealtime(1.0f);
 
+        trigger.RingSound(start);
         text.text = "  スタート！";
 
         yield return new WaitForSecondsRealtime(0.5f);

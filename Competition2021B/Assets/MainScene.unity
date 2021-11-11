@@ -4997,6 +4997,7 @@ GameObject:
   - component: {fileID: 6686675755391153657}
   - component: {fileID: 6686675755391153662}
   - component: {fileID: 6686675755391153663}
+  - component: {fileID: 6686675755391153664}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Player
@@ -5030,12 +5031,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.098
-  refAtt: 1.5
+  refAtt: 0.8
   friAtt: 0.01
   gn: {fileID: 6203253841018011469}
   spd: 0.05
   moveVec: {x: 0, y: 0, z: 0}
   ap: {fileID: 1993334673}
+  wn: {x: 0, y: 0, z: 0}
+  oldPos: {x: 0, y: 0, z: 0}
+  nowVec: {x: 0, y: 0, z: 0}
 --- !u!114 &6686675755391153663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5048,6 +5052,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59fa3be805a1e8644811c79d3a71cbdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6686675755391153664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6686675755391153660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 079c47f5a81db334ba9457e03693739d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objTag: 0
+  ass: {fileID: 1993334675}
+  seColEnt:
+    m_PersistentCalls:
+      m_Calls: []
+  seColStay:
+    m_PersistentCalls:
+      m_Calls: []
+  seTriEnt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6686675755391153664}
+        m_MethodName: RingSound
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: dc1e6d0605d6cec44880c90c3230234e,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!33 &6976459680477133630
 MeshFilter:
   m_ObjectHideFlags: 0

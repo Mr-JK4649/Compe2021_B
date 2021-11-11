@@ -18,22 +18,25 @@ public class pause : MonoBehaviour
 
     [SerializeField] GameObject clear;
 
-    public AudioProcess ap;
+    Trigger trigger;
+    [SerializeField] AudioClip move;
+    [SerializeField] AudioClip enter;
 
     void Start()
     {
         pauseFlg = false;
         //Time.timeScale = 1;
+        trigger = GameObject.Find("Ball").GetComponent<Trigger>();
     }
 
     void Update()
     {
-
         if ((Input.GetKeyDown("joystick button 7") || Input.GetKeyDown(KeyCode.T)) && clear.activeInHierarchy == false)
         {
             if (pauseFlg == false)
             {
                 // ポーズ画面on
+                trigger.RingSound(enter);
                 canvas.SetActive(true);
                 firstSelected.Select();
                 Time.timeScale = 0;
@@ -42,6 +45,7 @@ public class pause : MonoBehaviour
             else
             {
                 // ポーズ画面off
+                trigger.RingSound(enter);
                 EventSystem.current.SetSelectedGameObject(null);
                 canvas.SetActive(false);
                 Time.timeScale = 1;
@@ -53,7 +57,11 @@ public class pause : MonoBehaviour
         {
 
             // カーソル移動
-            selectedObj = eventSystem.currentSelectedGameObject.gameObject;
+            if(selectedObj != eventSystem.currentSelectedGameObject.gameObject)
+            {
+                trigger.RingSound(move);
+                selectedObj = eventSystem.currentSelectedGameObject.gameObject;
+            }
             switch (selectedObj.name)
             {
                 case "RestartButton":
@@ -84,12 +92,14 @@ public class pause : MonoBehaviour
 
     public void Restart()
     {
+        trigger.RingSound(enter);
         Debug.Log("りすたーと");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void BackTitle()
     {
+        trigger.RingSound(enter);
         Debug.Log("たいとる");
         //SceneManager.sceneLoaded += GameSceneLoaded;
 
@@ -98,6 +108,7 @@ public class pause : MonoBehaviour
 
     public void GameEnd()
     {
+        trigger.RingSound(enter);
         Debug.Log("しゅうりょう");
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;

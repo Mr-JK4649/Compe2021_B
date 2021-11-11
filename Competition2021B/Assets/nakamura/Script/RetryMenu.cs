@@ -15,14 +15,20 @@ public class RetryMenu : MonoBehaviour
 
     [SerializeField] GameObject GameClearCanvas;
 
+    Trigger trigger;
+    [SerializeField] AudioClip move;
+    [SerializeField] AudioClip enter;
+
     void Start()
     {
         retryCanvas.SetActive(false);
+        trigger = GameObject.Find("Ball").GetComponent<Trigger>();
     }
     void Update()
     {
         if (GameClearCanvas.activeInHierarchy == true && Input.GetKeyDown("joystick button 0"))
         {
+            trigger.RingSound(enter);
             retryCanvas.SetActive(true);
             firstSelected.Select();
         }
@@ -31,7 +37,11 @@ public class RetryMenu : MonoBehaviour
         {
 
             // カーソル移動
-            selectedObj = eventSystem.currentSelectedGameObject.gameObject;
+            if (selectedObj != eventSystem.currentSelectedGameObject.gameObject)
+            {
+                trigger.RingSound(move);
+                selectedObj = eventSystem.currentSelectedGameObject.gameObject;
+            }
             switch (selectedObj.name)
             {
                 case "RestartButton":
