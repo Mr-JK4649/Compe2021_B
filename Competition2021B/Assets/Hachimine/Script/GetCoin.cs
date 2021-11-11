@@ -27,7 +27,9 @@ public class GetCoin : MonoBehaviour
         {
             Debug.Log("Hello World");
 
-            Instantiate(getCoinFX, this.transform.position, Quaternion.identity);
+            GameObject effe = Instantiate(getCoinFX, this.transform.position, Quaternion.identity);
+
+            Destroy(effe, 1.0f);
 
             Destroy(this.gameObject);
         }
