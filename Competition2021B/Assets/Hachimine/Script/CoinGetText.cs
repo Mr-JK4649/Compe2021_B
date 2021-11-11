@@ -53,7 +53,7 @@ public class CoinGetText : MonoBehaviour
         //テキストの表示を入れ替える
         disa_Text.text =  CoinCollect_Point + "/ 12";
         Text Ris_coin = Result_coin.GetComponent<Text>();
-        Ris_coin.text = CoinCollect_Point + " / 12";
+        Ris_coin.text = "取得したコイン" + "  " + CoinCollect_Point + " / 12";
 
         
 
