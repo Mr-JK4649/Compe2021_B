@@ -4,12 +4,45 @@ using System;
 
 public class Trigger : MonoBehaviour
 {
-    [SerializeField] private SEEvent seEve = new SEEvent();
+    public enum Kind{ 
+        coin,
+        Wall,
+        Player,
+        Floor
+    }
 
-    public void FuncA(){ seEve.Invoke();}
+    [SerializeField] AudioClip ac;
+    [SerializeField] Kind objTag;
+    [SerializeField] AudioSource ass;
+
+    [SerializeField] private SEEvent seColEnt = new SEEvent();
+    [SerializeField] private SEEvent seColStay = new SEEvent();
+    [SerializeField] private SEEvent seTriEnt = new SEEvent();
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == objTag.ToString())
+            seColEnt.Invoke();
+    }
+
+    public void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == objTag.ToString())
+            seColStay.Invoke();
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == objTag.ToString())
+            seTriEnt.Invoke();
+    }
     //public void OnCollisionEnter (Collision other){ onConEn.Invoke();}
     //public void OnCollisionExit (Collision other){ onConEx.Invoke();}
     //public void OnCollisionStay (Collision other){ onConSt.Invoke();}
+
+    public void RingSound() {
+        ass.PlayOneShot(ac);
+    }
 
     [Serializable]
     public class SEEvent : UnityEvent

@@ -19,9 +19,6 @@ public class BallGravity : MonoBehaviour
     //落下中フラグ
     private bool isFall = true;
 
-    //壁衝突フラグ
-    private bool isWall = false;
-
     //自身のRididBody
     private Rigidbody rb;
 
@@ -39,6 +36,13 @@ public class BallGravity : MonoBehaviour
     private Vector3 floorNor;
 
     public AudioProcess ap;
+
+    public Vector3 wn;
+
+    //1フレーム前の座標
+    public Vector3 oldPos;
+
+    public Vector3 nowVec;
 
     private void Start()
     {
@@ -60,15 +64,12 @@ public class BallGravity : MonoBehaviour
         }
 
         
-        if (floorNor.y == 1.0f && moveVec != Vector3.zero)//傾き0だったばあい速度を減衰していく
-        {
-            moveVec = Vector3.Lerp(moveVec, Vector3.zero, friAtt);
-            if (moveVec.x + moveVec.y <= 0.0005f)
-                moveVec = Vector3.zero;
-        }
-        else if(moveVec != Vector3.zero){                 //それ以外の場合、摩擦による速度減衰
-            moveVec = Vector3.Lerp(moveVec, Vector3.zero, friAtt/5.0f);
-        }
+        //if (floorNor.y == 1.0f && moveVec != Vector3.zero)//傾き0だったばあい速度を減衰していく
+        //{
+        //    moveVec = Vector3.Lerp(moveVec, Vector3.zero, friAtt);
+        //    if (moveVec.x + moveVec.y <= 0.0005f)
+        //        moveVec = Vector3.zero;
+        //}
 
         //重力
         if (isFall)
@@ -80,10 +81,15 @@ public class BallGravity : MonoBehaviour
             gravity = 0;
         }
 
-        this.transform.position += moveVec;
 
-        Debug.DrawRay(this.transform.position, moveVec*10,new Color(255,0,0));
+        //最終的なやつ
+        transform.position += moveVec;
 
+        //現在のベクトルを算出
+        nowVec = transform.position - oldPos;
+
+        //現在の位置を保存
+        oldPos = transform.position;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -94,11 +100,13 @@ public class BallGravity : MonoBehaviour
         }
 
         if(collision.gameObject.tag == "Wall"){
-            isWall = true;
-            Vector3 wn = collision.contacts[0].normal;
-            //moveVec *= refAtt;
-            moveVec = Vector3.Reflect(moveVec, wn);
-            Debug.Log("今当たった壁のほうせん"+wn);
+            // = collision.gameObject.GetComponent<GetNormals>().GetNormal();
+            wn = collision.contacts[0].normal;
+
+            //前のフレームの座標と現在のフレームの座標から進行ベクトルを割り出す
+
+            moveVec = Vector3.Reflect(nowVec, wn);
+            moveVec *= refAtt;
             ap.ShotSE(0);
         }
 
@@ -113,13 +121,14 @@ public class BallGravity : MonoBehaviour
         }
 
         //壁に触れている間、壁に向かう力の大きさによって、速度減衰をさせる。
-        if (collision.gameObject.tag == "Wall") {
-
+        if (collision.gameObject.tag == "Wall")
+        {
             //壁の法線を取得
-            Vector3 wallNormal = collision.contacts[0].normal;
+            wn = collision.gameObject.GetComponent<GetNormals>().GetNormal();
 
             //壁に触れている間速度を減衰させる
-            moveVec -= PowVec3(moveVec, wallNormal);
+            //moveVec = Vector3.Reflect(moveVec, wallNormal);
+            //moveVec += wallNormal;
         }
     }
 
@@ -127,8 +136,6 @@ public class BallGravity : MonoBehaviour
     {
         if(collision.gameObject.tag == "Floor")
             isFall = true;
-        if (collision.gameObject.tag == "Wall")
-            isWall = false;
     }
 
     private Vector3 PowVec3(Vector3 a, Vector3 b) {

@@ -14,7 +14,7 @@ public class GetNormals : MonoBehaviour
     private void Start()
     {
 
-        cPos = this.transform.position;
+        cPos = this.transform.localPosition;
         aPos = this.transform.GetChild(0).position;
         bPos = this.transform.GetChild(1).position;
     }
@@ -22,7 +22,7 @@ public class GetNormals : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        cPos = this.transform.position;
         aPos = this.transform.GetChild(0).position;
         bPos = this.transform.GetChild(1).position;
         normalVec = CalcNormalVector();
