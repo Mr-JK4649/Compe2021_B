@@ -35,7 +35,6 @@ public class BallGravity : MonoBehaviour
     //床の法線
     private Vector3 floorNor;
 
-    public AudioProcess ap;
 
     public Vector3 wn;
 
@@ -43,6 +42,10 @@ public class BallGravity : MonoBehaviour
     public Vector3 oldPos;
 
     public Vector3 nowVec;
+
+
+    //衝撃は
+    [SerializeField] GameObject showWave;
 
     private void Start()
     {
@@ -59,17 +62,9 @@ public class BallGravity : MonoBehaviour
         }
 
         //ちから　ごうせい　すごい 
-        if( Mathf.Abs(moveVec.x + moveVec.z) < 0.05f){
+        if ( Mathf.Abs(moveVec.x + moveVec.z) < 0.05f){
             moveVec += (Vector3.down + floorNor) * spd * Time.deltaTime;
         }
-
-        
-        //if (floorNor.y == 1.0f && moveVec != Vector3.zero)//傾き0だったばあい速度を減衰していく
-        //{
-        //    moveVec = Vector3.Lerp(moveVec, Vector3.zero, friAtt);
-        //    if (moveVec.x + moveVec.y <= 0.0005f)
-        //        moveVec = Vector3.zero;
-        //}
 
         //重力
         if (isFall)
@@ -77,7 +72,8 @@ public class BallGravity : MonoBehaviour
             moveVec.y = gravity;
             gravity += -0.098f * Time.deltaTime;
         }
-        else {
+        else
+        {
             gravity = 0;
         }
 
@@ -107,7 +103,9 @@ public class BallGravity : MonoBehaviour
 
             moveVec = Vector3.Reflect(nowVec, wn);
             moveVec *= refAtt;
-            ap.ShotSE(0);
+
+            GameObject effe = Instantiate(showWave, this.transform.position, Quaternion.identity);
+            Destroy(effe, 1.0f);
         }
 
     }
