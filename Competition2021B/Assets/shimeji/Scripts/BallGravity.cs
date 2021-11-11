@@ -53,10 +53,11 @@ public class BallGravity : MonoBehaviour
         {
             rb.WakeUp();
         }
-        
-        //斜面に沿って移動する
-        moveVec.x += floorNor.x * spd * Time.deltaTime;
-        moveVec.z += floorNor.z * spd * Time.deltaTime;
+
+        //ちから　ごうせい　すごい 
+        if( Mathf.Abs(moveVec.x + moveVec.z) < 0.05f){
+            moveVec += (Vector3.down + floorNor) * spd * Time.deltaTime;
+        }
 
         
         if (floorNor.y == 1.0f && moveVec != Vector3.zero)//傾き0だったばあい速度を減衰していく
@@ -79,8 +80,7 @@ public class BallGravity : MonoBehaviour
             gravity = 0;
         }
 
-        if(moveVec != Vector3.zero)
-            this.transform.position += moveVec;
+        this.transform.position += moveVec;
 
         Debug.DrawRay(this.transform.position, moveVec*10,new Color(255,0,0));
 
@@ -96,8 +96,9 @@ public class BallGravity : MonoBehaviour
         if(collision.gameObject.tag == "Wall"){
             isWall = true;
             Vector3 wn = collision.contacts[0].normal;
+            //moveVec *= refAtt;
             moveVec = Vector3.Reflect(moveVec, wn);
-            Debug.Log(wn);
+            Debug.Log("今当たった壁のほうせん"+wn);
             ap.ShotSE(0);
         }
 
@@ -110,6 +111,16 @@ public class BallGravity : MonoBehaviour
             //床の法線を取得
             floorNor = gn.GetNormal();
         }
+
+        //壁に触れている間、壁に向かう力の大きさによって、速度減衰をさせる。
+        if (collision.gameObject.tag == "Wall") {
+
+            //壁の法線を取得
+            Vector3 wallNormal = collision.contacts[0].normal;
+
+            //壁に触れている間速度を減衰させる
+            moveVec -= PowVec3(moveVec, wallNormal);
+        }
     }
 
     private void OnCollisionExit(Collision collision)
@@ -118,6 +129,15 @@ public class BallGravity : MonoBehaviour
             isFall = true;
         if (collision.gameObject.tag == "Wall")
             isWall = false;
+    }
+
+    private Vector3 PowVec3(Vector3 a, Vector3 b) {
+
+        a.x *= b.x;
+        a.y *= b.y;
+        a.z *= b.z;
+
+        return a;
     }
 
 }
