@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - coin
   - SEPlayer
+  - GradeUp
   layers:
   - Default
   - TransparentFX
