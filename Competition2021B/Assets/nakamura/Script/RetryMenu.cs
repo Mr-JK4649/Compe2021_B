@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class RetryMenu : MonoBehaviour
 {
@@ -26,7 +27,9 @@ public class RetryMenu : MonoBehaviour
     }
     void Update()
     {
-        if (GameClearCanvas.activeInHierarchy == true && Input.GetKeyDown("joystick button 0"))
+        if (GameClearCanvas.activeInHierarchy == true &&
+            retryCanvas.activeInHierarchy == false &&
+            Input.GetKeyDown("joystick button 0"))
         {
             trigger.RingSound(enter);
             retryCanvas.SetActive(true);
@@ -57,10 +60,48 @@ public class RetryMenu : MonoBehaviour
                     break;
 
                 case null:
-                    cursor.rectTransform.localPosition = new Vector3(-300.0f, 30.0f, 0.0f);
                     break;
             }
 
         }
+    }
+
+    public void RetryButton()
+    {
+        eventSystem.sendNavigationEvents = false;
+        StartCoroutine("NextScene");
+    }
+
+    private IEnumerator NextScene()
+    {
+        // 音を鳴らすためのコルーチン
+        trigger.RingSound(enter);
+
+        yield return new WaitForSecondsRealtime(0.5f);
+
+        switch (selectedObj.name)
+        {
+            case "RestartButton":
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                break;
+
+            case "BackTitleButton":
+                SceneManager.LoadScene("TitleScene");
+                break;
+
+            case "GameEndButton":
+#if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+#else
+        UnityEngine.Application.Quit();
+#endif // UNITY_EDITOR
+                break;
+
+            case null:
+                break;
+        }
+
+        //コルーチンを終了
+        yield break;
     }
 }

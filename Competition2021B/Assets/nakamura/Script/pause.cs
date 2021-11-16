@@ -90,36 +90,68 @@ public class pause : MonoBehaviour
         return pauseFlg;
     }
 
-    public void Restart()
+    public void PauseButton()
     {
-        trigger.RingSound(enter);
-        Debug.Log("りすたーと");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        eventSystem.sendNavigationEvents = false;
+        StartCoroutine("NextScene");
     }
 
-    public void BackTitle()
-    {
-        trigger.RingSound(enter);
-        Debug.Log("たいとる");
-        //SceneManager.sceneLoaded += GameSceneLoaded;
+//    public void Restart()
+//    {
+//        Debug.Log("りすたーと");
+//        StartCoroutine("NextScene");
+//        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+//    }
 
-        SceneManager.LoadScene("TitleScene");
-    }
+//    public void BackTitle()
+//    {
+//        Debug.Log("たいとる");
+//        StartCoroutine("NextScene");
 
-    public void GameEnd()
+//        //SceneManager.LoadScene("TitleScene");
+//    }
+
+//    public void GameEnd()
+//    {
+//        Debug.Log("しゅうりょう");
+//        StartCoroutine("NextScene");
+////#if UNITY_EDITOR
+////        UnityEditor.EditorApplication.isPlaying = false;
+////#else
+////        UnityEngine.Application.Quit();
+////#endif // UNITY_EDITOR
+//    }
+
+    private IEnumerator NextScene()
     {
+        // 音を鳴らすためのコルーチン
         trigger.RingSound(enter);
-        Debug.Log("しゅうりょう");
+
+        yield return new WaitForSecondsRealtime(0.5f);
+
+        switch (selectedObj.name)
+        {
+            case "RestartButton":
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                break;
+
+            case "BackTitleButton":
+                SceneManager.LoadScene("TitleScene");
+                break;
+
+            case "GameEndButton":
 #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
+                UnityEditor.EditorApplication.isPlaying = false;
 #else
         UnityEngine.Application.Quit();
 #endif // UNITY_EDITOR
-    }
+                break;
 
-    //private void GameSceneLoaded(Scene next, LoadSceneMode mode)
-    //{
-    //    // イベントから削除
-    //    SceneManager.sceneLoaded -= GameSceneLoaded;
-    //}
+            case null:
+                break;
+        }
+
+        //コルーチンを終了
+        yield break;
+    }
 }
