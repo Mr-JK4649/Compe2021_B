@@ -9,6 +9,9 @@ public class GreadUpDownItem : MonoBehaviour
     [SerializeField] GameObject TextDeployment;
     //[SerializeField] GameObject GreadUpItem;
     [SerializeField] GameObject PlayerBall;
+
+    [SerializeField] public float Mu; //球の大きさの倍数
+
     bool Itemflg;
     float Unko = 0.2f;
     // Start is called before the first frame update
@@ -27,7 +30,7 @@ public class GreadUpDownItem : MonoBehaviour
     {
         if (other.gameObject.tag == "GradeUp" && Itemflg == false)
         {
-            Unko = 0.4f;
+            Unko *= Mu;
             Itemflg = true;
             PlayerBall.transform.localScale = new Vector3(Unko, Unko, Unko);
             Invoke("TimeDownGread", 7.5f);
