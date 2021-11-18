@@ -16,6 +16,7 @@ public class CoinGetText : MonoBehaviour
     [SerializeField] GameObject GameClear; //ゲームクリアキャンバス
     [SerializeField] GameObject GameResult; //ゲームリザルト
     [SerializeField] GameObject PointResult;//ゲーム中に出てるポイント表示を消す。
+    [SerializeField] GameObject FX_Confetti = null;
     //bool GameRestart=false;
 
     GameObject PlayerSphere;
@@ -40,6 +41,8 @@ public class CoinGetText : MonoBehaviour
        */
         PlayerSphere = GameObject.Find("Ball");
         playerpoint = PlayerSphere.GetComponent<PlayerPoint>();
+        FX_Confetti = GameObject.Find("Confetti");
+        FX_Confetti.SetActive(false);
         ResultStart = 0;
     }
 
@@ -68,6 +71,7 @@ public class CoinGetText : MonoBehaviour
                 PointResult.SetActive(false);
                 GameResult.SetActive(true);
             }
+            FX_Confetti.SetActive(true);
         }
         //Debug.Log(CoinCollect_Point);
     }
