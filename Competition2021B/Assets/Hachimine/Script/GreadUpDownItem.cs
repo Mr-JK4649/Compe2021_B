@@ -40,8 +40,8 @@ public class GreadUpDownItem : MonoBehaviour
     private void TimeDownGread()
     {
         Unko = 0.2f;
+        Itemflg = false;
         PlayerBall.transform.localScale = new Vector3(Unko, Unko, Unko);
         TextDeployment.SetActive(true);
-        Itemflg = false;
     }
 }
