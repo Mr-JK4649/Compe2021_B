@@ -1,4 +1,4 @@
-﻿#define DEBUG_YAMA_ON_2
+﻿#define DEBUG_YAMA_OFF
 
 using System.Collections;
 using System.Collections.Generic;
