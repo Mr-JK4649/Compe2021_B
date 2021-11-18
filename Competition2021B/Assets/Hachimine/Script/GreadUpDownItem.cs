@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GreadUpDownItem : MonoBehaviour
 {
 
-    [SerializeField] GameObject TextDeployment;
+
     //[SerializeField] GameObject GreadUpItem;
     [SerializeField] GameObject PlayerBall;
 
@@ -48,6 +48,6 @@ public class GreadUpDownItem : MonoBehaviour
 
         Itemflg = false;
         PlayerBall.transform.localScale = new Vector3(Unko, Unko, Unko);
-        TextDeployment.SetActive(true);
+       
     }
 }
