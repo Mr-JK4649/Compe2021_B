@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SetConfetti : MonoBehaviour
 {
-    const int MAX_TIME = 99999600;    // 再生時間
+    const int MAX_TIME = 600;    // 再生時間
 
     ParticleSystem ps_confetti;  // このオブジェクトのパーティクルシステム
      private int frameCount;     // フレームを格納

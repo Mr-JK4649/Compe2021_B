@@ -814,6 +814,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 623797598}
   m_CullTransparentMesh: 0
+--- !u!1001 &660655042
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1498765535974638806, guid: 9e47dc056f3d25d41a57a7d2ddbe38b6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.32477146
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498765535974638806, guid: 9e47dc056f3d25d41a57a7d2ddbe38b6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.69682777
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498765535974638806, guid: 9e47dc056f3d25d41a57a7d2ddbe38b6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.50835025
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498765535974638806, guid: 9e47dc056f3d25d41a57a7d2ddbe38b6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498765535974638806, guid: 9e47dc056f3d25d41a57a7d2ddbe38b6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498765535974638806, guid: 9e47dc056f3d25d41a57a7d2ddbe38b6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498765535974638806, guid: 9e47dc056f3d25d41a57a7d2ddbe38b6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498765535974638806, guid: 9e47dc056f3d25d41a57a7d2ddbe38b6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498765535974638806, guid: 9e47dc056f3d25d41a57a7d2ddbe38b6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498765535974638806, guid: 9e47dc056f3d25d41a57a7d2ddbe38b6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498765535974638806, guid: 9e47dc056f3d25d41a57a7d2ddbe38b6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498765535974638807, guid: 9e47dc056f3d25d41a57a7d2ddbe38b6,
+        type: 3}
+      propertyPath: m_Name
+      value: Confetti
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e47dc056f3d25d41a57a7d2ddbe38b6, type: 3}
 --- !u!1 &675453779
 GameObject:
   m_ObjectHideFlags: 0
@@ -3748,6 +3817,7 @@ MonoBehaviour:
   GameClear: {fileID: 5744188301601236085}
   GameResult: {fileID: 1168063584}
   PointResult: {fileID: 943833798}
+  FX_Confetti: {fileID: 0}
   disa_coin: {fileID: 5744188302969871206}
   Result_coin: {fileID: 874121555}
   TimerResult: {fileID: 623797598}
@@ -6738,7 +6808,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60c10f1de468a99418e4dffc1c944bcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextDeployment: {fileID: 0}
   PlayerBall: {fileID: 6686675755391153660}
   Mu: 2
 --- !u!1 &6968812983868412069
