@@ -13,10 +13,14 @@ public class CoinHitCheck : MonoBehaviour
     float dist; //球と球の距離
     [SerializeField, Tooltip("オブジェクトとオブジェクトの距離： 2乗")]
     float dist2;//球と球の距離のべき乗計算
-
-    [SerializeField, Tooltip("半径の大きさ :")]
+    
+    /*[SerializeField, Tooltip("半径の大きさ :")]
     Vector3 pmsize;
-
+    */
+    [SerializeField, Tooltip("大きさ　:")]
+    float Pookisa;
+    [SerializeField, Tooltip("アイテムの大きさ :")]
+    float Mookisa;
     void Start()
     {
 
@@ -33,8 +37,7 @@ public class CoinHitCheck : MonoBehaviour
         /*dist = Vector3.Distance(PlayerBall.position, transform.position);
         dist2 = Mathf.Pow(dist, 2.0f);
         */
-
-        float pmsizekari = 0.1f + 0.05f;
+        
 
         Vector3 Player = PlayerBall.transform.position;
         Vector3 Me = ObjectMe.transform.position;
@@ -42,9 +45,24 @@ public class CoinHitCheck : MonoBehaviour
 
         Vector3 PSca = PlayerBall.transform.localScale;
         Vector3 MSca = ObjectMe.transform.localScale;
+
         
-        pmsize = PSca + MSca; //半径同士を図る
-        Debug.Log("今日の大きさ :" + pmsize);
+
+        Pookisa = PlayerBall.transform.localScale.x;
+        Mookisa = ObjectMe.transform.localScale.x;
+
+        float Pookisa2 = Pookisa / 2;
+        float Mookisa2 = Mookisa / 2;
+        
+        float pmsizekari = Pookisa2 + Mookisa2;
+        
+
+        //Debug.Log("unko" + Pookisa);
+        
+        //pmsize = PSca + MSca; //半径同士を図る
+        //Debug.Log("今日の大きさ :" + pmsize);
+
+
         float pmsizekari2 = Mathf.Pow(pmsizekari,2.0f);
 
 

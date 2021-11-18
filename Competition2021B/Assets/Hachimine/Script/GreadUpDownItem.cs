@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GreadUpDownItem : MonoBehaviour
 {
 
-    [SerializeField] GameObject TextDeployment;
+
     //[SerializeField] GameObject GreadUpItem;
     [SerializeField] GameObject PlayerBall;
 
@@ -14,6 +14,7 @@ public class GreadUpDownItem : MonoBehaviour
 
     bool Itemflg;
     float Unko = 0.2f;
+    float Unko2 = 0.1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,8 +41,13 @@ public class GreadUpDownItem : MonoBehaviour
     private void TimeDownGread()
     {
         Unko = 0.2f;
-        PlayerBall.transform.localScale = new Vector3(Unko, Unko, Unko);
-        TextDeployment.SetActive(true);
+        Vector3 Playery = transform.position;
+        Playery.y -= Unko2;
+        transform.position = Playery;
+
+
         Itemflg = false;
+        PlayerBall.transform.localScale = new Vector3(Unko, Unko, Unko);
+       
     }
 }

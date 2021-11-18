@@ -33,7 +33,7 @@ public class pause : MonoBehaviour
     {
         if ((Input.GetKeyDown("joystick button 7") || Input.GetKeyDown(KeyCode.T)) && clear.activeInHierarchy == false)
         {
-            if (pauseFlg == false)
+            if (pauseFlg == false && Time.timeScale == 1)
             {
                 // ポーズ画面on
                 trigger.RingSound(enter);
@@ -42,7 +42,7 @@ public class pause : MonoBehaviour
                 Time.timeScale = 0;
                 pauseFlg = true;
             }
-            else
+            else if(pauseFlg == true && Time.timeScale == 0)
             {
                 // ポーズ画面off
                 trigger.RingSound(enter);
