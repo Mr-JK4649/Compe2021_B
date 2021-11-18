@@ -62,8 +62,20 @@ public class BallGravity : MonoBehaviour
         }
 
         //ちから　ごうせい　すごい 
-        if ( Mathf.Abs(moveVec.x + moveVec.z) < 0.05f){
+        if (floorNor.y < 1.0f)
+        {
             moveVec += (Vector3.down + floorNor) * spd * Time.deltaTime;
+        }
+        else {
+            //床との摩擦
+            moveVec *= friAtt;
+        }
+
+        //ある程度速度が下がったら0にする
+        {
+            if (Mathf.Abs(moveVec.x) < 0.0002f) moveVec.x = 0;
+            if (Mathf.Abs(moveVec.y) < 0.0002f) moveVec.y = 0;
+            if (Mathf.Abs(moveVec.z) < 0.0002f) moveVec.z = 0;
         }
 
         //重力
@@ -95,19 +107,6 @@ public class BallGravity : MonoBehaviour
             isFall = false;
         }
 
-        if(collision.gameObject.tag == "Wall"){
-            // = collision.gameObject.GetComponent<GetNormals>().GetNormal();
-            wn = collision.contacts[0].normal;
-
-            //前のフレームの座標と現在のフレームの座標から進行ベクトルを割り出す
-
-            moveVec = Vector3.Reflect(nowVec, wn);
-            moveVec *= refAtt;
-
-            GameObject effe = Instantiate(showWave, this.transform.position, Quaternion.identity);
-            Destroy(effe, 1.0f);
-        }
-
     }
 
     private void OnCollisionStay(Collision collision)
@@ -117,17 +116,6 @@ public class BallGravity : MonoBehaviour
             //床の法線を取得
             floorNor = gn.GetNormal();
         }
-
-        //壁に触れている間、壁に向かう力の大きさによって、速度減衰をさせる。
-        if (collision.gameObject.tag == "Wall")
-        {
-            //壁の法線を取得
-            wn = collision.gameObject.GetComponent<GetNormals>().GetNormal();
-
-            //壁に触れている間速度を減衰させる
-            //moveVec = Vector3.Reflect(moveVec, wallNormal);
-            //moveVec += wallNormal;
-        }
     }
 
     private void OnCollisionExit(Collision collision)
@@ -136,13 +124,24 @@ public class BallGravity : MonoBehaviour
             isFall = true;
     }
 
-    private Vector3 PowVec3(Vector3 a, Vector3 b) {
-
-        a.x *= b.x;
-        a.y *= b.y;
-        a.z *= b.z;
-
-        return a;
+    //速度を0にする
+    public void ResetBallVelocity() {
+        moveVec = Vector3.zero;
     }
 
+
+    //渡された法線ベクトルで反射
+    public void PassNormalRefrection(Vector3 nor) {
+
+        GameObject effe = Instantiate(showWave, this.transform.position, Quaternion.identity);
+        Destroy(effe, 1.0f);
+        moveVec = Vector3.Reflect(moveVec, nor);
+        moveVec *= refAtt;
+    }
+
+    //壁から同僚の力で押してもらう
+    public void PushSamePower(Vector3 nor) {
+        if (Mathf.Abs(moveVec.x) + Mathf.Abs(moveVec.z) > 0.01f)
+            moveVec *= 0.5f;
+    }
 }
