@@ -5,10 +5,10 @@ using UnityEngine;
 public class BallGravity : MonoBehaviour
 {
     //現在の落下力
-    private float gravity = 0f;
+    private float nowGravity = 0f;
 
     [SerializeField,Tooltip("落ちる力(毎秒毎秒)")] 
-    private float speed = 0f;
+    private float gravity = 0f;
 
     [SerializeField,Tooltip("反射時の速度減衰(高い程減衰)")]
     private float refAtt = 0f;
@@ -64,7 +64,8 @@ public class BallGravity : MonoBehaviour
         //ちから　ごうせい　すごい 
         if (floorNor.y < 1.0f)
         {
-            moveVec += (Vector3.down + floorNor) * spd * Time.deltaTime;
+            Vector3 gravityVelocity = new Vector3(0, -gravity, 0);
+            moveVec += (gravityVelocity + floorNor) * spd * Time.deltaTime;
         }
         else {
             //床との摩擦
@@ -81,12 +82,12 @@ public class BallGravity : MonoBehaviour
         //重力
         if (isFall)
         {
-            moveVec.y = gravity;
-            gravity += -0.098f * Time.deltaTime;
+            moveVec.y = nowGravity;
+            nowGravity += -0.098f * Time.deltaTime;
         }
         else
         {
-            gravity = 0;
+            nowGravity = 0;
         }
 
 

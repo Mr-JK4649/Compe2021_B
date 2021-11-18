@@ -18,6 +18,7 @@ public class PushButton : MonoBehaviour
     [SerializeField] Trigger trigger;
     [SerializeField] AudioClip move;
     [SerializeField] AudioClip enter;
+    string stageName;
 
     private void Start()
     {
@@ -48,7 +49,7 @@ public class PushButton : MonoBehaviour
     public void NextMain()
     {
         Debug.Log("めいん");
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene(stageName);
     }
 
     public void Stage1()
@@ -58,6 +59,7 @@ public class PushButton : MonoBehaviour
         Stage2_Button.interactable = false;
         Stage3_Button.interactable = false;
         Stage4_Button.interactable = false;
+        stageName = "MainScene";
         Invoke("NextMain", 1f);
     }
     public void Stage2()
@@ -67,6 +69,7 @@ public class PushButton : MonoBehaviour
         Stage1_Button.interactable = false;
         Stage3_Button.interactable = false;
         Stage4_Button.interactable = false;
+        stageName = "Stage2";
         Invoke("NextMain", 1f);
     }
     public void Stage3()
