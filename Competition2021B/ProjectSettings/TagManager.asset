@@ -9,6 +9,7 @@ TagManager:
   - coin
   - SEPlayer
   - GradeUp
+  - GreadDown
   layers:
   - Default
   - TransparentFX

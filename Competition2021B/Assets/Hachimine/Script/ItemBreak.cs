@@ -19,8 +19,6 @@ public class ItemBreak : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-           
-
             Destroy(this.gameObject);
         }
     }

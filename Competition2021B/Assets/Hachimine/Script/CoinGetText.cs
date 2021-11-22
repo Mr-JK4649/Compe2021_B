@@ -22,6 +22,8 @@ public class CoinGetText : MonoBehaviour
     GameObject PlayerSphere;
     PlayerPoint playerpoint;
 
+
+
     public GameObject disa_coin = null; //コイン数のテキスト
     public GameObject Result_coin = null; //リザルト時に出るテキスト
     public GameObject TimerResult = null; //タイムのリザルト
