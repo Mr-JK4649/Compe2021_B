@@ -8,24 +8,20 @@ struct OBB {
 
 public class HitCheck : MonoBehaviour
 {
-
-    //球の位置
-    [SerializeField]
-    Transform sphere;
+    Transform sphere;   //球のtransform
     Vector3 spherePos;  //球の座標
-    float sphereSca;  //球のスケール
+    float sphereSca;    //球のスケール
 
-    //ボールとの最近接点s
-    Vector3 cpo;
+    BallGravity bg;     //球の移動を司るスクリプト
 
-    //床
-    Transform tra;
-    Vector3 pos;
-    Vector3[] ang = new Vector3[3]; //各座標軸の傾きを表すやつ
-    float[] sca = new float[3];     //さいず
+    Vector3 cpo;        //ボールとの最近接点
 
-    [SerializeField]
-    BallGravity bg;
+    Transform tra;      //床のtransform
+    Vector3 pos;        //床の座標
+    Vector3[] ang = new Vector3[3]; //各座標軸の傾きを表すベクトル
+    float[] sca = new float[3];     //中心から各軸方向へのサイズの半径
+
+    
 
     //反射フラグ
     bool ableRefFlag = true;
@@ -88,7 +84,7 @@ public class HitCheck : MonoBehaviour
                 }
                 else
                 { //壁から押し出す力
-                  //bg.PushSamePower(nor);
+                  bg.PushSamePower(nor);
                 }
 
                 return;
