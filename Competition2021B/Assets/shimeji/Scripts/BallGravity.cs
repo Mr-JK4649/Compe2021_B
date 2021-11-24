@@ -29,8 +29,8 @@ public class BallGravity : MonoBehaviour
     public float spd;
 
     //進行方向
-    [SerializeField]
-    private Vector3 moveVec;
+    
+    public Vector3 moveVec;
 
     //床の法線
     private Vector3 floorNor;

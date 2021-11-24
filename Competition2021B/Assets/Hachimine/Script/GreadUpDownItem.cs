@@ -49,7 +49,8 @@ public class GreadUpDownItem : MonoBehaviour
         if (other.gameObject.tag=="GreadDown" && Itemflg2==false) {
             Itemflg2 = true;
             //sdi /= 2;
-            GravitySpd.spd /= 2f;
+            GravitySpd.moveVec /= 2f;
+            GravitySpd.spd /= 2;
             Invoke("TimeUpGread",2.0f);
         }
     }
@@ -67,6 +68,7 @@ public class GreadUpDownItem : MonoBehaviour
 
     private void TimeUpGread() //速さが戻る
     {
+        GravitySpd.moveVec *= 2;
         GravitySpd.spd *= 2;
         Itemflg2 = false;
     }
