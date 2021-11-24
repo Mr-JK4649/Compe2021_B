@@ -79,6 +79,7 @@ public class PushButton : MonoBehaviour
         Stage1_Button.interactable = false;
         Stage2_Button.interactable = false;
         Stage4_Button.interactable = false;
+        stageName = "Stage3";
         Invoke("NextMain", 1f);
     }
     public void Stage4()
@@ -88,6 +89,7 @@ public class PushButton : MonoBehaviour
         Stage1_Button.interactable = false;
         Stage2_Button.interactable = false;
         Stage3_Button.interactable = false;
+        stageName = "Stage4";
         Invoke("NextMain", 1f);
     }
 }
