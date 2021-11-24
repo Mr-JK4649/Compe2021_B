@@ -9,9 +9,12 @@ public class CoinHitCheck : MonoBehaviour
     public Transform PlayerBall;//プレイヤー
     [SerializeField]
     public Transform ObjectMe;//自分を入れる
-    [SerializeField, Tooltip("オブジェクトとオブジェクトの距離：")]
+    
+    
+
+
     float dist; //球と球の距離
-    [SerializeField, Tooltip("オブジェクトとオブジェクトの距離： 2乗")]
+
     float dist2;//球と球の距離のべき乗計算
     
     /*[SerializeField, Tooltip("半径の大きさ :")]
@@ -21,14 +24,20 @@ public class CoinHitCheck : MonoBehaviour
     float Pookisa;
     [SerializeField, Tooltip("アイテムの大きさ :")]
     float Mookisa;
+
+    public bool hitcflg;
+
+    
+
     void Start()
     {
-
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        hitcflg = false;
         Example();
         
     }
@@ -74,13 +83,13 @@ public class CoinHitCheck : MonoBehaviour
         float disy2 = Mathf.Pow(disY, 2.0f);
         float disz2 = Mathf.Pow(disZ, 2.0f);
 
+
+
         if (disx2 + disy2 + disz2 <= pmsizekari2)
         {
-            Destroy(this.gameObject);
+            hitcflg = true; //当たり判定
+            //Destroy(this.gameObject);
         }
-
-
-
 
         //Debug.Log("確認用 Distance to other :" + dist);
     }
