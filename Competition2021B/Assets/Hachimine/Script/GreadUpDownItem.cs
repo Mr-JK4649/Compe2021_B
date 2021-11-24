@@ -66,6 +66,6 @@ public class GreadUpDownItem : MonoBehaviour
     private void TimeUpGread() //速さが戻る
     {
         GravitySpd.spd *= 2;
-        Itemflg = true;
+        Itemflg = false;
     }
 }
