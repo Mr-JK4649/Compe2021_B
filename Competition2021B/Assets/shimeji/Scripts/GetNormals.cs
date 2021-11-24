@@ -30,7 +30,8 @@ public class GetNormals : MonoBehaviour
 
         //フラグがオンならレイで法線を表示
         if(ray) Debug.DrawRay(cPos, normalVec);
-        Debug.Log("床の法線" + normalVec);
+
+        Debug.Log("ほうせん" + normalVec);
         
     }
 
@@ -52,7 +53,7 @@ public class GetNormals : MonoBehaviour
 
         //外積(法線ベクトル)を求める
         normalVec = Vector3.Cross(ctoa, ctob);
-        
+       
 
         return normalVec;
     }

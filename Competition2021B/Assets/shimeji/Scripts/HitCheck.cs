@@ -65,8 +65,7 @@ public class HitCheck : MonoBehaviour
         ang[0] = tra.right;
         ang[1] = tra.up;
         ang[2] = tra.forward;
-
-        
+        cpo = ClosestPtPointOBB(spherePos);      //最近接点の座標を求める
 
         if (nonColRef)
         {
@@ -126,8 +125,10 @@ public class HitCheck : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player") {
-            Vector3 nor = spherePos - cpo;  //ぶつかった壁との座標の差でベクトルを出す
-            nor = Vector3.Normalize(nor);   //法線ベクトルの正規化
+            Vector3 sPos = collision.transform.position;
+            cpo = ClosestPtPointOBB(sPos);  //最近接点の座標を求める
+            Vector3 nor = sPos - cpo;       //ぶつかった壁との座標の差でベクトルを出す
+            nor.Normalize();
             bg.PassNormalRefrection(nor);   //反射
         }
 
@@ -136,10 +137,7 @@ public class HitCheck : MonoBehaviour
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.tag == "Player") {
-            Vector3 nor = spherePos - cpo;  //ぶつかった壁との座標の差でベクトルを出す
-            nor = Vector3.Normalize(nor);   //法線ベクトルの正規化
-            //壁から押す処理
-            bg.PushSamePower(nor);
+            bg.PushSamePower(Vector3.zero);
         }
     }
 }
