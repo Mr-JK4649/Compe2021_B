@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GreadUpDownItem : MonoBehaviour
 {
+    const float FX_MAX_TIME = 0.3f;    // エフェクト再生時間
 
 
     //[SerializeField] GameObject GreadUpItem;
@@ -12,6 +13,9 @@ public class GreadUpDownItem : MonoBehaviour
 
     [SerializeField] public float Mu; //球の大きさの倍数
     //[SerializeField] public float sdi=0; //球の速さを半分にする
+
+    [SerializeField] GameObject FX_SizeUp = null;
+
 
     GameObject PlayerSphreSpd;
     BallGravity GravitySpd;
@@ -29,6 +33,9 @@ public class GreadUpDownItem : MonoBehaviour
         GravitySpd = PlayerSphreSpd.GetComponent<BallGravity>();
         Itemflg = false; //アイテムを取得してから450フレームまでTrue
         Itemflg2 = false; //アイテムを取得してから120フレームまでTrue
+        FX_SizeUp = GameObject.Find("SizeUp");
+        FX_SizeUp.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -43,6 +50,9 @@ public class GreadUpDownItem : MonoBehaviour
             Unko *= Mu;
             Itemflg = true;
             PlayerBall.transform.localScale = new Vector3(Unko, Unko, Unko);
+            FXSizeUpSetActive();
+
+            Invoke("FXSizeUpSetActive", FX_MAX_TIME);
             Invoke("TimeDownGread", 7.5f);
            
         }
@@ -71,5 +81,13 @@ public class GreadUpDownItem : MonoBehaviour
         GravitySpd.moveVec *= 2;
         GravitySpd.spd *= 2;
         Itemflg2 = false;
+    }
+
+    private void FXSizeUpSetActive()
+    {
+        if (FX_SizeUp.activeSelf == false)
+            FX_SizeUp.SetActive(true);
+        else
+            FX_SizeUp.SetActive(false);
     }
 }

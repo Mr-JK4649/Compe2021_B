@@ -7,7 +7,8 @@ public class SetConfetti : MonoBehaviour
     const int MAX_TIME = 600;    // 再生時間
 
     ParticleSystem ps_confetti;  // このオブジェクトのパーティクルシステム
-     private int frameCount;     // フレームを格納
+    private int frameCount;      // 再生しているフレームを格納
+    private int endCount;        // 終了後のフレームを格納
 
 
     void OnEnable()
@@ -46,14 +47,20 @@ public class SetConfetti : MonoBehaviour
     /// <summary>
     /// エフェクト停止の判断と実行
     /// </summary>
+    [System.Obsolete]
     private void JudgmentAndExecutionOfEffectStop()
     {
         if (frameCount < MAX_TIME)
             // 時間の加算
             AddTimeTo_timeCount();
         else
-            // エフェクトの停止
-            StopEffectAnimation();
+        {
+            ps_confetti.maxParticles = 0;
+            endCount++;
+            if (endCount > 200)
+                // エフェクトの停止
+                StopEffectAnimation();
+        }
 
     }
 
