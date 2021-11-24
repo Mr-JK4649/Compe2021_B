@@ -15,6 +15,7 @@ public class ParObject : MonoBehaviour
     {
         //cgetflag = false;
         Unkomorimori = this.transform.childCount;
+        Coinkazu = 1;
     }
     // Update is called once per frame
     void Update()
