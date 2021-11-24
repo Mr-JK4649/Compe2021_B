@@ -17,7 +17,8 @@ public class GreadUpDownItem : MonoBehaviour
     BallGravity GravitySpd;
 
 
-    bool Itemflg;
+    bool Itemflg;  //バフ
+    bool Itemflg2; //デバフ
     float Unko = 0.2f;
     float Unko2 = 0.1f;
     float Speed = 0;
@@ -26,7 +27,8 @@ public class GreadUpDownItem : MonoBehaviour
     {
         PlayerSphreSpd = GameObject.Find("Ball");
         GravitySpd = PlayerSphreSpd.GetComponent<BallGravity>();
-        Itemflg = false; //アイテムを使って450フレームまでTrue
+        Itemflg = false; //アイテムを取得してから450フレームまでTrue
+        Itemflg2 = false; //アイテムを取得してから120フレームまでTrue
     }
 
     // Update is called once per frame
@@ -44,8 +46,8 @@ public class GreadUpDownItem : MonoBehaviour
             Invoke("TimeDownGread", 7.5f);
            
         }
-        if (other.gameObject.tag=="GreadDown" && Itemflg==false) {
-            Itemflg = true;
+        if (other.gameObject.tag=="GreadDown" && Itemflg2==false) {
+            Itemflg2 = true;
             //sdi /= 2;
             GravitySpd.spd /= 2f;
             Invoke("TimeUpGread",2.0f);
@@ -66,6 +68,6 @@ public class GreadUpDownItem : MonoBehaviour
     private void TimeUpGread() //速さが戻る
     {
         GravitySpd.spd *= 2;
-        Itemflg = false;
+        Itemflg2 = false;
     }
 }
