@@ -1821,8 +1821,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 384559922}
-  - {fileID: 1127213675}
   - {fileID: 1568424683}
+  - {fileID: 1127213675}
   - {fileID: 126719134}
   m_Father: {fileID: 1149844906}
   m_RootOrder: 5
@@ -4993,6 +4993,8 @@ GameObject:
   - component: {fileID: 1443309846}
   - component: {fileID: 1443309845}
   - component: {fileID: 1443309854}
+  - component: {fileID: 1443309856}
+  - component: {fileID: 1443309855}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Player
@@ -5306,6 +5308,76 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1443309855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443309843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 079c47f5a81db334ba9457e03693739d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objTag: 5
+  ass: {fileID: 170631075}
+  seColEnt:
+    m_PersistentCalls:
+      m_Calls: []
+  seColStay:
+    m_PersistentCalls:
+      m_Calls: []
+  seTriEnt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1443309847}
+        m_MethodName: RingSound
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: ad5c441cabfcd0945aa61ed7e17db5f9,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1443309856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443309843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 079c47f5a81db334ba9457e03693739d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objTag: 4
+  ass: {fileID: 170631075}
+  seColEnt:
+    m_PersistentCalls:
+      m_Calls: []
+  seColStay:
+    m_PersistentCalls:
+      m_Calls: []
+  seTriEnt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1443309847}
+        m_MethodName: RingSound
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 54b240f9ccf1edb4cb9da0b6a1720bd7,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1491323049
 GameObject:
   m_ObjectHideFlags: 0

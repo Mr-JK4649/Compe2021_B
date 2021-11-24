@@ -8,7 +8,9 @@ public class Trigger : MonoBehaviour
         coin,
         Wall,
         Player,
-        Floor
+        Floor,
+        GradeUp,
+        GradeDown
     }
 
     [SerializeField] Kind objTag;
