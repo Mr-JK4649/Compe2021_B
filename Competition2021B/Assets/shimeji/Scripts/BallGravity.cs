@@ -47,10 +47,6 @@ public class BallGravity : MonoBehaviour
     //衝撃は
     [SerializeField] GameObject showWave;
 
-    //転がってる音
-    [SerializeField]
-    AudioClip ac;
-
     [SerializeField]
     AudioSource ass;
 
@@ -72,6 +68,7 @@ public class BallGravity : MonoBehaviour
         if (floorNor.y < 1.0f)
         {
             Vector3 gravityVelocity = new Vector3(0, -gravity, 0);
+            gravityVelocity.Normalize();
             moveVec += (gravityVelocity + floorNor) * spd * Time.deltaTime;
         }
         else {
@@ -127,6 +124,9 @@ public class BallGravity : MonoBehaviour
         {
             isFall = false;
         }
+        if (collision.gameObject.tag == "Wall") {
+            PassNormalRefrection(collision.contacts[0].normal);
+        }
 
     }
 
@@ -136,6 +136,10 @@ public class BallGravity : MonoBehaviour
         {
             //床の法線を取得
             floorNor = gn.GetNormal();
+            isFall = false;
+        }
+        if (collision.gameObject.tag == "Wall") {
+            PushSamePower(Vector3.zero);
         }
     }
 
@@ -162,9 +166,8 @@ public class BallGravity : MonoBehaviour
 
     //壁から同僚の力で押してもらう
     public void PushSamePower(Vector3 nor) {
-        //if (Mathf.Abs(moveVec.x) + Mathf.Abs(moveVec.z) > 0.01f)
-        //moveVec *= 0.5f;
-        { }
+        if (Mathf.Abs(moveVec.x) + Mathf.Abs(moveVec.z) > 0.002f)
+            moveVec *= 0.5f;
     }
 
     public (Vector3 old, Vector3 now) GetLength() {

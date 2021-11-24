@@ -20,15 +20,17 @@ public class GetNormals : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         cPos = this.transform.position;
         aPos = this.transform.GetChild(0).position;
         bPos = this.transform.GetChild(1).position;
         normalVec = CalcNormalVector();
+        normalVec.Normalize();
 
         //フラグがオンならレイで法線を表示
         if(ray) Debug.DrawRay(cPos, normalVec);
+        Debug.Log("床の法線" + normalVec);
         
     }
 

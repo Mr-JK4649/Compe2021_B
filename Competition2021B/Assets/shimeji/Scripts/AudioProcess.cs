@@ -42,7 +42,6 @@ public class AudioProcess : MonoBehaviour
         bool ip = pauseCls.IsPause();
         if (ip) bgmAudioSource.Pause();
         else if(!bgmAudioSource.isPlaying && !ip)bgmAudioSource.Play();
-        Debug.Log(ip);
         
     }
 
