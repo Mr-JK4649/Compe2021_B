@@ -27,7 +27,10 @@ public class Trigger : MonoBehaviour
     public void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.tag == objTag.ToString())
-            seColStay.Invoke();
+        {
+            if(!ass.isPlaying)
+                seColStay.Invoke();
+        }
     }
 
     public void OnTriggerEnter(Collider other)

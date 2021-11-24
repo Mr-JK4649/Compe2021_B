@@ -47,6 +47,13 @@ public class BallGravity : MonoBehaviour
     //衝撃は
     [SerializeField] GameObject showWave;
 
+    //転がってる音
+    [SerializeField]
+    AudioClip ac;
+
+    [SerializeField]
+    AudioSource ass;
+
     private void Start()
     {
         rb = this.GetComponent<Rigidbody>();
@@ -74,9 +81,9 @@ public class BallGravity : MonoBehaviour
 
         //ある程度速度が下がったら0にする
         {
-            if (Mathf.Abs(moveVec.x) < 0.0002f) moveVec.x = 0;
-            if (Mathf.Abs(moveVec.y) < 0.0002f) moveVec.y = 0;
-            if (Mathf.Abs(moveVec.z) < 0.0002f) moveVec.z = 0;
+            if (Mathf.Abs(moveVec.x) < 0.0003f) moveVec.x = 0;
+            if (Mathf.Abs(moveVec.y) < 0.0003f) moveVec.y = 0;
+            if (Mathf.Abs(moveVec.z) < 0.0003f) moveVec.z = 0;
         }
 
         //重力
@@ -99,6 +106,19 @@ public class BallGravity : MonoBehaviour
 
         //現在の位置を保存
         oldPos = transform.position;
+
+
+
+        //ボールが転がる音
+        if (Mathf.Abs(moveVec.x) + Mathf.Abs(moveVec.z) > 0)
+        {
+            if (ass.isPlaying == false)
+                ass.Play();
+        }
+        else
+        {
+            if (ass.isPlaying) ass.Pause();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -142,7 +162,13 @@ public class BallGravity : MonoBehaviour
 
     //壁から同僚の力で押してもらう
     public void PushSamePower(Vector3 nor) {
-        if (Mathf.Abs(moveVec.x) + Mathf.Abs(moveVec.z) > 0.01f)
-            moveVec *= 0.5f;
+        //if (Mathf.Abs(moveVec.x) + Mathf.Abs(moveVec.z) > 0.01f)
+        //moveVec *= 0.5f;
+        { }
+    }
+
+    public (Vector3 old, Vector3 now) GetLength() {
+
+        return (oldPos, transform.position);
     }
 }

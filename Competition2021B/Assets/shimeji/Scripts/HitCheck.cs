@@ -66,11 +66,15 @@ public class HitCheck : MonoBehaviour
         ang[1] = tra.up;
         ang[2] = tra.forward;
 
-        cpo = ClosestPtPointOBB();      //最近接点の座標を求める
-        Vector3 v = cpo - spherePos;            //衝突
+        
 
         if (nonColRef)
         {
+            float num = 0.0f;
+            while (num < 1.0f) {
+                cpo = ClosestPtPointOBB(spherePos);      //最近接点の座標を求める
+                num += 0.1f;
+            }
            
             if (Vector3.Distance(cpo, spherePos) <= sphereSca) //Vector3.Dot(v, v) <= sphereSca * sphereSca
             {
@@ -84,7 +88,7 @@ public class HitCheck : MonoBehaviour
                 }
                 else
                 { //壁から押し出す力
-                  bg.PushSamePower(nor);
+                    bg.PushSamePower(nor);
                 }
 
                 return;
@@ -96,9 +100,9 @@ public class HitCheck : MonoBehaviour
 
     }
 
-    Vector3 ClosestPtPointOBB()
+    Vector3 ClosestPtPointOBB(Vector3 sphePos)
     {
-        Vector3 d = spherePos - pos;
+        Vector3 d = sphePos - pos;
         Vector3 retvec = pos;
         float dist;
         for (int i = 0; i < 3; i++)
