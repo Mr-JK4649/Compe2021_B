@@ -9,7 +9,10 @@ public class CoinHitCheck : MonoBehaviour
     public Transform PlayerBall;//プレイヤー
     [SerializeField]
     public Transform ObjectMe;//自分を入れる
-  
+    
+    
+
+
     float dist; //球と球の距離
 
     float dist2;//球と球の距離のべき乗計算
