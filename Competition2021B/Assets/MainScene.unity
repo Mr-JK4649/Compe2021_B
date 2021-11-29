@@ -6783,7 +6783,7 @@ MonoBehaviour:
         m_MethodName: RingSound
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: dc1e6d0605d6cec44880c90c3230234e,
+          m_ObjectArgument: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
