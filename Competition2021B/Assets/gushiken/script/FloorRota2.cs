@@ -19,7 +19,8 @@ public class FloorRota2 : MonoBehaviour
 
     private float tiltx=0; //x軸の傾けている方向を入れる
     private float tiltz=0; //y軸の傾けている方向を入れる
-    private float tilta = 0;
+    private float tilta = 0; // -1：上　0：N　1：下　2：左　3：N　4：右
+    private float Oldtiltcount=0;
     private float Oldtilta = 0;
 
     private float OldInputx = 0; //前回入力したx軸入力を入れる
@@ -54,18 +55,16 @@ public class FloorRota2 : MonoBehaviour
 
         //testFlame=Mathf.Abs(speed*Input.GetAxis("Vertical"));
 
-        //if (FloorRota.x < 30 && FloorRota.x > -30 && FloorRota.z < 30 && FloorRota.z > -30) {
-        //    if (stopp == 0)
-        //    {
-                FloorRota.x += speed * -Input.GetAxisRaw("Vertical");
-                FloorRota.z += speed * Input.GetAxisRaw("Horizontal");
-        //    }
-        //    else {
-        //        FloorRota.x += speed * +Input.GetAxisRaw("Vertical");
-        //        FloorRota.z += speed * -Input.GetAxisRaw("Horizontal");
+        if (stopp==0) {
+            FloorRota.x += speed * -Input.GetAxisRaw("Vertical");
+            FloorRota.z += speed * Input.GetAxisRaw("Horizontal");
 
-        //    }
-        //}
+        }else if (stopp==1)
+        {
+            FloorRota.x += speed * Input.GetAxisRaw("Vertical");
+            FloorRota.z += speed * -Input.GetAxisRaw("Horizontal");
+
+        }
 
 
 
@@ -119,15 +118,36 @@ public class FloorRota2 : MonoBehaviour
         //tilt
         tiltx = Input.GetAxisRaw("Vertical");
         tilta = tiltx;
-        tiltz = 3 + Input.GetAxisRaw("Horizontal");
 
+        if (Oldtiltcount==0)
+        {
+            Oldtilta = tiltx;
+       
+        }
+
+        tiltz = 3 + Input.GetAxisRaw("Horizontal");
         if (tiltx == 0)
         {
             tilta = tiltz;
+           
         }
 
-        
-        
+        if (Oldtiltcount == 0)
+        {
+            if (tiltx != 0)
+            {
+                Oldtilta = tiltx;
+                Oldtiltcount = 1;
+
+            }
+            else if (tiltz != 3)//作業中
+            {
+                Oldtilta = tiltz;
+                Oldtiltcount = 1;
+            }
+        }
+
+
 
 
 
@@ -207,11 +227,21 @@ public class FloorRota2 : MonoBehaviour
             testFlame++;
 
 
-            if (speed>0&&tilta!=Oldtilta)
+            if (speed>0&&tilta!=Oldtilta)  //前回の入力キーと今の入力キーが違う場合
             {
-
-                speed -= OneFlamemove*1.6f;
-                stopp = 1;
+                if (tilta==2 && Oldtilta==4|| tilta == 4 && Oldtilta == 2 || 
+                    tilta == -1 && Oldtilta == 1 || tilta == 1 && Oldtilta == -1 ) // -1：上　0：N　1：下　2：左　3：N　4：右
+                {
+                    speed -= OneFlamemove * 3f;
+                    stopp = 1;
+                }else if (tilta == -1 && Oldtilta == 2 || tilta == 2 && Oldtilta == -1 ||
+                    tilta == -1 && Oldtilta == 4 || tilta == 4 && Oldtilta == -1 ||
+                    tilta == 1 && Oldtilta == 2 || tilta == 2 && Oldtilta == 1 ||
+                    tilta == 1 && Oldtilta == 4 || tilta == 4 && Oldtilta == 1)
+                {
+                    stopp = 0;
+                    speed = 0;//OneFlamemove * 1.6f;
+                }
             }
             else
             {
