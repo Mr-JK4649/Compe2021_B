@@ -17,9 +17,9 @@ public class FloorRota2 : MonoBehaviour
     private float Box = 0.0f;      //床の角度を0度にするための処理に使う変数
     private float Box2 = 0.0f;
 
-    private float tiltx=0; //x軸の傾けている方向を入れる
-    private float tiltz=0; //y軸の傾けている方向を入れる
-    private float tilta = 0; // -1：上　0：N　1：下　2：左　3：N　4：右
+    private int tiltx=0; //x軸の傾けている方向を入れる
+    private int tiltz=0; //y軸の傾けている方向を入れる
+    private int tilta = 0; // -1：上　0：N　1：下　2：左　3：N　4：右
     private float Oldtiltcount=0;
     private float Oldtilta = 0;
 
@@ -116,19 +116,14 @@ public class FloorRota2 : MonoBehaviour
         
         
         //tilt
-        tiltx = Input.GetAxisRaw("Vertical");
-        tilta = tiltx;
+        tiltx = (int)Input.GetAxis("Vertical");
+        tilta =tiltx;
 
-        if (Oldtiltcount==0)
-        {
-            Oldtilta = tiltx;
-       
-        }
+        tiltz = (int)Input.GetAxis("Horizontal")+3 ;
 
-        tiltz = 3 + Input.GetAxisRaw("Horizontal");
         if (tiltx == 0)
         {
-            tilta = tiltz;
+            tilta =(int) tiltz;
            
         }
 
@@ -146,7 +141,7 @@ public class FloorRota2 : MonoBehaviour
                 Oldtiltcount = 1;
             }
         }
-
+        Debug.Log(Oldtilta);
 
 
 
@@ -158,10 +153,6 @@ public class FloorRota2 : MonoBehaviour
 
         }else if(tiltx==0&&tiltz==3){//ニュートラルの時
 
-            if (speed>0)
-            {
-
-            }
 
             if (FloorRota.x!=0||FloorRota.z!=0) {///////傾いていたら
 
@@ -226,22 +217,30 @@ public class FloorRota2 : MonoBehaviour
         else{//十字キーを操作している時
             testFlame++;
 
+            
 
-            if (speed>0&&tilta!=Oldtilta)  //前回の入力キーと今の入力キーが違う場合
+            if (speed > 0 && tilta != Oldtilta)  //前回の入力キーと今の入力キーが違う場合
             {
-                if (tilta==2 && Oldtilta==4|| tilta == 4 && Oldtilta == 2 || 
-                    tilta == -1 && Oldtilta == 1 || tilta == 1 && Oldtilta == -1 ) // -1：上　0：N　1：下　2：左　3：N　4：右
+                if (tilta == 2 && Oldtilta == 4 || tilta == 4 && Oldtilta == 2 ||
+                    tilta == -1 && Oldtilta == 1 || tilta == 1 && Oldtilta == -1) // -1：上　0：N　1：下　2：左　3：N　4：右
                 {
-                    speed -= OneFlamemove * 3f;
+                    speed -= OneFlamemove * 2f;
                     stopp = 1;
-                }else if (tilta == -1 && Oldtilta == 2 || tilta == 2 && Oldtilta == -1 ||
-                    tilta == -1 && Oldtilta == 4 || tilta == 4 && Oldtilta == -1 ||
-                    tilta == 1 && Oldtilta == 2 || tilta == 2 && Oldtilta == 1 ||
-                    tilta == 1 && Oldtilta == 4 || tilta == 4 && Oldtilta == 1)
+                }
+                else
                 {
                     stopp = 0;
-                    speed = 0;//OneFlamemove * 1.6f;
+                    speed = 0;
                 }
+                //else if (tilta == -1 && Oldtilta == 2 || tilta == 2 && Oldtilta == -1 ||
+                //   tilta == -1 && Oldtilta == 4 || tilta == 4 && Oldtilta == -1 ||
+                //   tilta == 1 && Oldtilta == 2 || tilta == 2 && Oldtilta == 1 ||
+                //   tilta == 1 && Oldtilta == 4 || tilta == 4 && Oldtilta == 1)
+                //{//:OldTiltaの値がおかしくなっている,intに変えれば改善される？？
+                //    //スティック入力すると整数じゃなく小数も表示されてしまうため入らないものと思われます
+                //    stopp = 0;
+                //    speed = 0;//OneFlamemove * 1.6f;
+                //}
             }
             else
             {
@@ -257,8 +256,20 @@ public class FloorRota2 : MonoBehaviour
                 Debug.Log(FloorRota.x);
             }
 
+
+       
+
            // Debug.Log(testFlame);
         }
+
+        //if (tilta == Oldtilta)
+        //{
+        //    print("一致");
+        //}
+        //else
+        //{
+        //    print("不一致");
+        //}
 
     }
 
