@@ -9,7 +9,7 @@ public class HitCheckScript : MonoBehaviour
         Vector3 item_pos = item.transform.position;//座標保存
 
         Vector3 p_pos = p.transform.position;//プレイヤー座標
-        Debug.Log(item);
+       // Debug.Log(item);
         Vector3 Def = p_pos - item_pos;
 
         float d = Def.magnitude;
@@ -21,6 +21,7 @@ public class HitCheckScript : MonoBehaviour
         if (d <= p_radius + item_radius)
         {
             hit_flg = true;
+            //Debug.Log(p.transform.tag);
         }
         else
         {
