@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1911133913431757467}
   - component: {fileID: 1720948519135100462}
   - component: {fileID: 4497238240198496505}
-  - component: {fileID: 167410169243372283}
+  - component: {fileID: 8020161281703940350}
   m_Layer: 0
   m_Name: Coin (4)
   m_TagString: coin
@@ -94,7 +94,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &167410169243372283
+--- !u!114 &8020161281703940350
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,11 +103,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 209264212236218846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
     type: 3}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!1 &935251855177029075
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +124,7 @@ GameObject:
   - component: {fileID: 1484054830876849814}
   - component: {fileID: 1873448676540062243}
   - component: {fileID: 3491622802229114100}
-  - component: {fileID: 886954603144982262}
+  - component: {fileID: 375300619931431066}
   m_Layer: 0
   m_Name: Coin (3)
   m_TagString: coin
@@ -202,7 +206,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &886954603144982262
+--- !u!114 &375300619931431066
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,11 +215,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 935251855177029075}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
     type: 3}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!1 &1128674672975968440
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,7 +236,7 @@ GameObject:
   - component: {fileID: 1714491813658729469}
   - component: {fileID: 1922094333296965448}
   - component: {fileID: 3686136137785104799}
-  - component: {fileID: 1088865859217572765}
+  - component: {fileID: 2194072384797026924}
   m_Layer: 0
   m_Name: Coin (2)
   m_TagString: coin
@@ -310,7 +318,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1088865859217572765
+--- !u!114 &2194072384797026924
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -319,11 +327,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1128674672975968440}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
     type: 3}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!1 &1310631290638877807
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +403,7 @@ GameObject:
   - component: {fileID: 783256779786901337}
   - component: {fileID: 556493897708616684}
   - component: {fileID: 3328863353077863739}
-  - component: {fileID: 1299811200600248121}
+  - component: {fileID: 1602544366173033532}
   m_Layer: 0
   m_Name: Coin (8)
   m_TagString: coin
@@ -473,7 +485,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1299811200600248121
+--- !u!114 &1602544366173033532
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -482,11 +494,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1350074377208247324}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
     type: 3}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!1 &2032030411753447542
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,7 +515,7 @@ GameObject:
   - component: {fileID: 311305271150183219}
   - component: {fileID: 663794801649938310}
   - component: {fileID: 2359088026585776465}
-  - component: {fileID: 2055487497191447379}
+  - component: {fileID: 545547392570469532}
   m_Layer: 0
   m_Name: Coin (1)
   m_TagString: coin
@@ -581,7 +597,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2055487497191447379
+--- !u!114 &545547392570469532
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -590,11 +606,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2032030411753447542}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
     type: 3}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!1 &2638013039397133109
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +627,7 @@ GameObject:
   - component: {fileID: 4395188313327843440}
   - component: {fileID: 3574001989779969221}
   - component: {fileID: 1734457649656920594}
-  - component: {fileID: 2605804047560466448}
+  - component: {fileID: 6950450148882957592}
   m_Layer: 0
   m_Name: Coin (11)
   m_TagString: coin
@@ -689,7 +709,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2605804047560466448
+--- !u!114 &6950450148882957592
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -698,11 +718,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2638013039397133109}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
     type: 3}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!1 &4058397255699535951
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,7 +739,7 @@ GameObject:
   - component: {fileID: 2319512512130972426}
   - component: {fileID: 3267132777050838975}
   - component: {fileID: 350225403597240680}
-  - component: {fileID: 4100497591108936554}
+  - component: {fileID: 6405817380239457013}
   m_Layer: 0
   m_Name: Coin (6)
   m_TagString: coin
@@ -797,7 +821,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4100497591108936554
+--- !u!114 &6405817380239457013
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -806,11 +830,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 4058397255699535951}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
     type: 3}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!1 &6107540042439757658
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,7 +851,7 @@ GameObject:
   - component: {fileID: 5521577886019972127}
   - component: {fileID: 4739803799334027434}
   - component: {fileID: 7515458449434979965}
-  - component: {fileID: 6086581187174216831}
+  - component: {fileID: 698941518353972730}
   m_Layer: 0
   m_Name: Coin
   m_TagString: coin
@@ -905,7 +933,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6086581187174216831
+--- !u!114 &698941518353972730
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -914,11 +942,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6107540042439757658}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
     type: 3}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!1 &6453514851100373201
 GameObject:
   m_ObjectHideFlags: 0
@@ -931,7 +963,7 @@ GameObject:
   - component: {fileID: 4750663233936577428}
   - component: {fileID: 5515221444244094753}
   - component: {fileID: 7278221049149559286}
-  - component: {fileID: 6429675206549900276}
+  - component: {fileID: 647482081691929416}
   m_Layer: 0
   m_Name: Coin (9)
   m_TagString: coin
@@ -1013,7 +1045,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6429675206549900276
+--- !u!114 &647482081691929416
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1022,11 +1054,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6453514851100373201}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
     type: 3}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!1 &7393296933858156619
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,7 +1075,7 @@ GameObject:
   - component: {fileID: 9149211050285875982}
   - component: {fileID: 8331440909549514683}
   - component: {fileID: 6490908108523995500}
-  - component: {fileID: 7363370528462674798}
+  - component: {fileID: 4790618955303563707}
   m_Layer: 0
   m_Name: Coin (5)
   m_TagString: coin
@@ -1121,7 +1157,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7363370528462674798
+--- !u!114 &4790618955303563707
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1130,11 +1166,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7393296933858156619}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
     type: 3}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!1 &8190672507388440509
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,7 +1187,7 @@ GameObject:
   - component: {fileID: 7622869747498339576}
   - component: {fileID: 7254841609419792461}
   - component: {fileID: 5558866721515572890}
-  - component: {fileID: 8151140562086565016}
+  - component: {fileID: 2909644080389487908}
   m_Layer: 0
   m_Name: Coin (10)
   m_TagString: coin
@@ -1229,7 +1269,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8151140562086565016
+--- !u!114 &2909644080389487908
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1238,11 +1278,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8190672507388440509}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
     type: 3}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!1 &8697470709850389546
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,7 +1299,7 @@ GameObject:
   - component: {fileID: 6976459679563571055}
   - component: {fileID: 7905755483678290906}
   - component: {fileID: 4917241865622789389}
-  - component: {fileID: 8648645900643567375}
+  - component: {fileID: 6539806238982827797}
   m_Layer: 0
   m_Name: Coin (7)
   m_TagString: coin
@@ -1337,7 +1381,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8648645900643567375
+--- !u!114 &6539806238982827797
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1346,8 +1390,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8697470709850389546}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
     type: 3}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
