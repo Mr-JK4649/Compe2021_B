@@ -5,6 +5,7 @@ using UnityEngine;
 public class BallGravity : MonoBehaviour
 {
     const float FX_MAX_TIME = 0.5f;    // エフェクト再生時間
+    Vector3 FX_APPEARANCE_HALF_SIZE = new Vector3(0.5f, 0.5f, 0.5f);    // エフェクトの外観サイズ
 
     //現在の落下力
     private float nowGravity = 0f;
@@ -56,6 +57,7 @@ public class BallGravity : MonoBehaviour
     {
         rb = this.GetComponent<Rigidbody>();
         shockWave = this.transform.Find("HitEffect_A").gameObject;
+        //shockWave.transform.localScale = FX_APPEARANCE_HALF_SIZE;
         shockWave.SetActive(false);
     }
 
