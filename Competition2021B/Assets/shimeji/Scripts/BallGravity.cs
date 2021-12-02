@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BallGravity : MonoBehaviour
 {
+    const float FX_MAX_TIME = 0.5f;    // エフェクト再生時間
+
     //現在の落下力
     private float nowGravity = 0f;
 
@@ -44,8 +46,8 @@ public class BallGravity : MonoBehaviour
     public Vector3 nowVec;
 
 
-    //衝撃は
-    [SerializeField] GameObject showWave;
+    //衝撃波
+    [SerializeField] GameObject shockWave = null;
 
     [SerializeField]
     AudioSource ass;
@@ -53,6 +55,8 @@ public class BallGravity : MonoBehaviour
     private void Start()
     {
         rb = this.GetComponent<Rigidbody>();
+        shockWave = this.transform.Find("HitEffect_A").gameObject;
+        shockWave.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -157,8 +161,8 @@ public class BallGravity : MonoBehaviour
     //渡された法線ベクトルで反射
     public void PassNormalRefrection(Vector3 nor) {
 
-        GameObject effe = Instantiate(showWave, this.transform.position, Quaternion.identity);
-        Destroy(effe, 1.0f);
+        shockWave.SetActive(true);
+        Invoke("StopShockWaveAnimation", FX_MAX_TIME);
         moveVec = Vector3.Reflect(moveVec, nor);
         moveVec *= refAtt;
     }
@@ -172,5 +176,10 @@ public class BallGravity : MonoBehaviour
     public (Vector3 old, Vector3 now) GetLength() {
 
         return (oldPos, transform.position);
+    }
+
+    private void StopShockWaveAnimation()
+    {
+        shockWave.SetActive(false);
     }
 }
