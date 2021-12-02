@@ -42,6 +42,7 @@ public class NewUpDownScript : MonoBehaviour
         PlayerSphereSpd = GameObject.Find("Ball");
         GravitySpd = PlayerSphereSpd.GetComponent<BallGravity>();
 
+        Rigidbody rb = GetComponent<Rigidbody>();
 
         //FX_SizeUp = GameObject.Find("SizeUp");
         FX_SizeUp = player.transform.Find("SizeUp").gameObject;
@@ -51,8 +52,9 @@ public class NewUpDownScript : MonoBehaviour
         Itemflg = false; //アイテムを取得してから450フレームまでTrue
         Itemflg2 = false; //アイテムを取得してから120フレームまでTrue
 
+        
 
-       
+
     }
 
     // Update is called once per frame
@@ -90,8 +92,10 @@ public class NewUpDownScript : MonoBehaviour
             {
                 Itemflg2 = true;
                 //sdi /= 2;
-                GravitySpd.moveVec /= 2f;
-                GravitySpd.spd /= 2;
+                /*GravitySpd.moveVec /= 4f;
+                GravitySpd.spd /= 4;*/
+                //GameObject.Find("Ball").GetComponent<Rigidbody>().velocity /= 4;
+                GameObject.Find("Ball").GetComponent<Rigidbody>().drag = 8;
                 this.gameObject.SetActive(false);
                 Invoke("TimeUpGread", 2.0f);
             }
@@ -113,8 +117,9 @@ public class NewUpDownScript : MonoBehaviour
 
     private void TimeUpGread() //速さが戻る
     {
-        GravitySpd.moveVec *= 2;
-        GravitySpd.spd *= 2;
+        /* GravitySpd.moveVec *= 2;
+         GravitySpd.spd *= 2;*/
+        GameObject.Find("Ball").GetComponent<Rigidbody>().drag = 0;
         Itemflg2 = false;
         Destroy(gameObject);
     }
