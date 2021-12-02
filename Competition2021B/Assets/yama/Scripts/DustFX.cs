@@ -7,6 +7,7 @@ public class DustFX : MonoBehaviour
     const int MAX_TIME = 600;    // 再生時間
 
     ParticleSystem ps_dust;  // このオブジェクトのパーティクルシステム
+    Transform ball;
     private int frameCount;      // 再生しているフレームを格納
     Vector3 buf_dustPos;
 
@@ -15,6 +16,7 @@ public class DustFX : MonoBehaviour
     {
         // 変数の初期化
         ps_dust = this.gameObject.GetComponent<ParticleSystem>();
+        ball = this.transform.parent.transform;
         frameCount = 0;
 
         GetDustParam();
@@ -29,6 +31,9 @@ public class DustFX : MonoBehaviour
     {
         SetDustParam();
 
+        GetDustParam();
+
+        //Debug.Log(ball.position);
     }
 
     /// <summary>
@@ -69,15 +74,16 @@ public class DustFX : MonoBehaviour
         //Debug.Log(maxParNum);
         ps_dust.playbackSpeed = 0.5f;
 
+        /*
         //角度の設定
         Vector3 dustAngle = CalculationDustDirectionAndSpeed().Item2.eulerAngles;
         dustAngle.y += 90.0f;
 
         var sh = ps_dust.shape;
         sh.rotation = dustAngle;
+        */
 
-
-        GetDustParam();
+        this.transform.position = this.transform.parent.position;
 
     }
 }
