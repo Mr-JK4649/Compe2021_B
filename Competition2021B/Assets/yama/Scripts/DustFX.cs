@@ -22,8 +22,6 @@ public class DustFX : MonoBehaviour
         GetDustParam();
 
         ps_dust.Play();
-
-        Debug.Log(ps_dust);
     }
 
     // Update is called once per frame

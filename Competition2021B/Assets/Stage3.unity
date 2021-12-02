@@ -5255,6 +5255,7 @@ GameObject:
   - component: {fileID: 1443309854}
   - component: {fileID: 1443309856}
   - component: {fileID: 1443309855}
+  - component: {fileID: 1443309845}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Player
@@ -5279,6 +5280,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1443309845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443309843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bbbd1b85fab60947b2e4222088afe25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fx_hitWall: {fileID: 6670816016453016272, guid: 848f715d247ba30438dc7b2fd9b25896,
+    type: 3}
 --- !u!114 &1443309846
 MonoBehaviour:
   m_ObjectHideFlags: 0
