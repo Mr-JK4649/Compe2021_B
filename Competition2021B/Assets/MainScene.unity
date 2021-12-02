@@ -6824,8 +6824,8 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_AngularDrag: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -6890,7 +6890,6 @@ GameObject:
   - component: {fileID: 6686675755391153658}
   - component: {fileID: 6686675755391153661}
   - component: {fileID: 6686675755391153657}
-  - component: {fileID: 6686675755391153662}
   - component: {fileID: 6686675755391153663}
   - component: {fileID: 6686675755391153664}
   - component: {fileID: 6686675755391153665}
@@ -6911,35 +6910,12 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6686675755391153660}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: d961233dfe25a3c4d9e5e89172a58b5b, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.45
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6686675755391153662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6686675755391153660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23c2874756422ec4880e19d76d08ce09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravity: 0.98
-  refAtt: 0.6
-  friAtt: 0.99
-  gn: {fileID: 6203253841018011469}
-  spd: 0.2
-  moveVec: {x: 0, y: 0, z: 0}
-  wn: {x: 0, y: 0, z: 0}
-  oldPos: {x: 0, y: 0, z: 0}
-  nowVec: {x: 0, y: 0, z: 0}
-  shockWave: {fileID: 0}
-  ass: {fileID: 6686675755391153667}
 --- !u!114 &6686675755391153663
 MonoBehaviour:
   m_ObjectHideFlags: 0
