@@ -14,6 +14,11 @@ public class ScorePlus : MonoBehaviour
     [SerializeField]
     GameObject hit_objplu;
 
+    [SerializeField] Trigger trigger; //音
+    [SerializeField] AudioClip coin;//コイン
+ 
+
+
     HitCheckScript hitcheck_scoreplus;
 
     // Start is called before the first frame update
@@ -41,6 +46,7 @@ public class ScorePlus : MonoBehaviour
     {
         if (hitcheck_scoreplus.HitCheck(player, this.gameObject))
         {
+            trigger.RingSound(coin);
             coingettext.CoinCollect_Point += 1; //コインを取った時の数値に＋１する。
             GameObject effe = Instantiate(getCoinFX, this.transform.position, Quaternion.identity);
             Destroy(effe, 1.0f);
