@@ -146,15 +146,23 @@ public class FloorRota2 : MonoBehaviour
 
 
 
-        if (tiltx==1 && tiltz ==4 || tiltx==-1 && tiltz==2 || tiltx==-1 && tiltz==4 || tiltx==1 && tiltz==2)//斜めの操作を制限
-        {
+        //if (tiltx==1 && tiltz ==4 || tiltx==-1 && tiltz==2 || tiltx==-1 && tiltz==4 || tiltx==1 && tiltz==2)//斜めの操作を制限
+        //{
             
-          speed = 0.0f;
+        //  speed = 0.0f;
 
-        }else if(tiltx==0&&tiltz==3){//ニュートラルの時
+        //}else 
+        if(tiltx==0&&tiltz==3){//ニュートラルの時
 
 
             if (FloorRota.x!=0||FloorRota.z!=0) {///////傾いていたら
+
+
+                speed -= OneFlamemove * 16.5f;
+                if (speed<=0)
+                {
+                    speed = 0;
+                }
 
                 ///////////**************x軸を0に戻す処理
                 if (FloorRota.x < 0)
@@ -224,7 +232,11 @@ public class FloorRota2 : MonoBehaviour
                 if (tilta == 2 && Oldtilta == 4 || tilta == 4 && Oldtilta == 2 ||
                     tilta == -1 && Oldtilta == 1 || tilta == 1 && Oldtilta == -1) // -1：上　0：N　1：下　2：左　3：N　4：右
                 {
-                    speed -= OneFlamemove * 2f;
+                    speed -= OneFlamemove * 16.5f;
+                    if (speed<=0)
+                    {
+                        speed = 0;
+                    }
                     stopp = 1;
                 }
                 else
@@ -244,7 +256,11 @@ public class FloorRota2 : MonoBehaviour
             }
             else
             {
-                speed += OneFlamemove;
+                if (FloorRota.x<=30&&FloorRota.x>=-30&& FloorRota.z <= 30 && FloorRota.z >= -30)
+                {
+                    speed += OneFlamemove * 5.0f;
+                }
+                //speed += OneFlamemove * 5.0f;
                 Oldtilta = tilta;
                 stopp = 0;
             }
