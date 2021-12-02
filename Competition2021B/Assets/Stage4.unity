@@ -1186,11 +1186,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 250538508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
-    type: 3}
+  getCoinFX: {fileID: 0}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!65 &250538511
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1200,7 +1203,7 @@ BoxCollider:
   m_GameObject: {fileID: 250538508}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -1493,11 +1496,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 349248228}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
-    type: 3}
+  getCoinFX: {fileID: 0}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!65 &349248231
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1507,7 +1513,7 @@ BoxCollider:
   m_GameObject: {fileID: 349248228}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -2104,11 +2110,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 431397260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
-    type: 3}
+  getCoinFX: {fileID: 0}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!65 &431397263
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2118,7 +2127,7 @@ BoxCollider:
   m_GameObject: {fileID: 431397260}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -2921,11 +2930,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 534219177}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
-    type: 3}
+  getCoinFX: {fileID: 0}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!65 &534219180
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2935,7 +2947,7 @@ BoxCollider:
   m_GameObject: {fileID: 534219177}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -3029,11 +3041,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 535867133}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
-    type: 3}
+  getCoinFX: {fileID: 0}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!65 &535867136
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3043,7 +3058,7 @@ BoxCollider:
   m_GameObject: {fileID: 535867133}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -3455,11 +3470,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 731401374}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
-    type: 3}
+  getCoinFX: {fileID: 0}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!65 &731401377
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3469,7 +3487,7 @@ BoxCollider:
   m_GameObject: {fileID: 731401374}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -3563,11 +3581,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 751416952}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
-    type: 3}
+  getCoinFX: {fileID: 0}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!65 &751416955
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3577,7 +3598,7 @@ BoxCollider:
   m_GameObject: {fileID: 751416952}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -4101,7 +4122,6 @@ GameObject:
   - component: {fileID: 880347490}
   - component: {fileID: 880347489}
   - component: {fileID: 880347488}
-  - component: {fileID: 880347486}
   - component: {fileID: 880347485}
   - component: {fileID: 880347484}
   - component: {fileID: 880347492}
@@ -4215,18 +4235,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &880347486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 880347481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59fa3be805a1e8644811c79d3a71cbdd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &880347488
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4513,11 +4521,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 887265249}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
-    type: 3}
+  getCoinFX: {fileID: 0}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!65 &887265252
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4527,7 +4538,7 @@ BoxCollider:
   m_GameObject: {fileID: 887265249}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -5641,11 +5652,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1089572030}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
-    type: 3}
+  getCoinFX: {fileID: 0}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!65 &1089572033
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5655,7 +5669,7 @@ BoxCollider:
   m_GameObject: {fileID: 1089572030}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -7418,11 +7432,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1475406355}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
-    type: 3}
+  getCoinFX: {fileID: 0}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!65 &1475406358
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7432,7 +7449,7 @@ BoxCollider:
   m_GameObject: {fileID: 1475406355}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -7934,11 +7951,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1596357390}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
-    type: 3}
+  getCoinFX: {fileID: 0}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!65 &1596357393
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7948,7 +7968,7 @@ BoxCollider:
   m_GameObject: {fileID: 1596357390}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -8885,11 +8905,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1857541140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
-    type: 3}
+  getCoinFX: {fileID: 0}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!65 &1857541143
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8899,7 +8922,7 @@ BoxCollider:
   m_GameObject: {fileID: 1857541140}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -9741,7 +9764,7 @@ BoxCollider:
   m_GameObject: {fileID: 4470975369937217112}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -9848,7 +9871,7 @@ BoxCollider:
   m_GameObject: {fileID: 3968967396041815503}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -10020,7 +10043,7 @@ GameObject:
   - component: {fileID: 729321711475930733}
   - component: {fileID: 538371057238006488}
   - component: {fileID: 3383261370561098767}
-  - component: {fileID: 1353444636441964045}
+  - component: {fileID: 1332450457184326953}
   m_Layer: 0
   m_Name: Coin
   m_TagString: coin
@@ -10028,7 +10051,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1353444636441964045
+--- !u!114 &1332450457184326953
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10037,11 +10060,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1332450457184326952}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
-    type: 3}
+  getCoinFX: {fileID: 0}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!4 &1670007241769208724
 Transform:
   m_ObjectHideFlags: 0
@@ -10065,7 +10091,7 @@ BoxCollider:
   m_GameObject: {fileID: 2316472595752843833}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -10095,7 +10121,7 @@ GameObject:
   - component: {fileID: 527546658898282982}
   - component: {fileID: 735642824931206483}
   - component: {fileID: 2575751764272434052}
-  - component: {fileID: 2271305590193312134}
+  - component: {fileID: 2247571633949928100}
   m_Layer: 0
   m_Name: Coin (9)
   m_TagString: coin
@@ -10103,7 +10129,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2271305590193312134
+--- !u!114 &2247571633949928100
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10112,11 +10138,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2247571633949928099}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
-    type: 3}
+  getCoinFX: {fileID: 0}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!1 &2316472595752843833
 GameObject:
   m_ObjectHideFlags: 0
@@ -10129,7 +10158,7 @@ GameObject:
   - component: {fileID: 4055211189628672380}
   - component: {fileID: 3828269359886038473}
   - component: {fileID: 2065975091742202654}
-  - component: {fileID: 2346504689589600540}
+  - component: {fileID: 2316472595752843834}
   m_Layer: 0
   m_Name: Coin (5)
   m_TagString: coin
@@ -10137,7 +10166,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2346504689589600540
+--- !u!114 &2316472595752843834
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10146,11 +10175,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2316472595752843833}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
-    type: 3}
+  getCoinFX: {fileID: 0}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!23 &2454998286305557055
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10199,7 +10231,7 @@ BoxCollider:
   m_GameObject: {fileID: 2247571633949928099}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -10259,7 +10291,7 @@ BoxCollider:
   m_GameObject: {fileID: 1332450457184326952}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -10364,7 +10396,7 @@ GameObject:
   - component: {fileID: 3420018047806215818}
   - component: {fileID: 2454998286305557055}
   - component: {fileID: 836130465364759784}
-  - component: {fileID: 4008534386095771370}
+  - component: {fileID: 3968967396041815504}
   m_Layer: 0
   m_Name: Coin (10)
   m_TagString: coin
@@ -10372,7 +10404,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4008534386095771370
+--- !u!114 &3968967396041815504
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10381,11 +10413,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3968967396041815503}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
-    type: 3}
+  getCoinFX: {fileID: 0}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!33 &4055211189628672380
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10445,6 +10480,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   hit_obj_item: {fileID: 917658551}
+  ItemMesh: {fileID: 0}
+  kinoko_se: {fileID: 8300000, guid: ad5c441cabfcd0945aa61ed7e17db5f9, type: 3}
+  audiosource_kinoko: {fileID: 2045284845}
   Mu: 2
 --- !u!1 &4338062239082003863
 GameObject:
@@ -10481,6 +10519,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   hit_obj_item: {fileID: 917658551}
+  ItemMesh: {fileID: 0}
+  kinoko_se: {fileID: 8300000, guid: ad5c441cabfcd0945aa61ed7e17db5f9, type: 3}
+  audiosource_kinoko: {fileID: 2045284845}
   Mu: 2
 --- !u!1 &4470975369937217112
 GameObject:
@@ -10494,7 +10535,7 @@ GameObject:
   - component: {fileID: 2769391558936954141}
   - component: {fileID: 3101121244802738600}
   - component: {fileID: 180718489575606143}
-  - component: {fileID: 4519835503203212669}
+  - component: {fileID: 4470975369937217113}
   m_Layer: 0
   m_Name: Coin (7)
   m_TagString: coin
@@ -10502,7 +10543,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4519835503203212669
+--- !u!114 &4470975369937217113
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10511,11 +10552,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4470975369937217112}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
-    type: 3}
+  getCoinFX: {fileID: 0}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!4 &4542282723959657720
 Transform:
   m_ObjectHideFlags: 0
@@ -10670,7 +10714,7 @@ BoxCollider:
   m_GameObject: {fileID: 9146200767030084157}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -10744,7 +10788,7 @@ GameObject:
   - component: {fileID: 6645678924465604841}
   - component: {fileID: 5862998840584954972}
   - component: {fileID: 8707395095144057483}
-  - component: {fileID: 4966702138959188105}
+  - component: {fileID: 4924953784407649197}
   m_Layer: 0
   m_Name: Coin (4)
   m_TagString: coin
@@ -10752,7 +10796,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4966702138959188105
+--- !u!114 &4924953784407649197
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10761,11 +10805,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4924953784407649196}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
-    type: 3}
+  getCoinFX: {fileID: 0}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!1 &5266498296715256522
 GameObject:
   m_ObjectHideFlags: 0
@@ -10778,7 +10825,7 @@ GameObject:
   - component: {fileID: 5869490857122349455}
   - component: {fileID: 6634683451245800762}
   - component: {fileID: 8473609178638091245}
-  - component: {fileID: 5306342434465716719}
+  - component: {fileID: 5266498296715256523}
   m_Layer: 0
   m_Name: Coin (2)
   m_TagString: coin
@@ -10786,7 +10833,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &5306342434465716719
+--- !u!114 &5266498296715256523
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10795,11 +10842,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5266498296715256522}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
-    type: 3}
+  getCoinFX: {fileID: 0}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!1 &5351729318026661793
 GameObject:
   m_ObjectHideFlags: 0
@@ -10812,7 +10862,7 @@ GameObject:
   - component: {fileID: 5919959650450681060}
   - component: {fileID: 6863578515800277073}
   - component: {fileID: 8560001070243966598}
-  - component: {fileID: 5399991245999535236}
+  - component: {fileID: 5351729318026661794}
   m_Layer: 0
   m_Name: Coin (3)
   m_TagString: coin
@@ -10820,7 +10870,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &5399991245999535236
+--- !u!114 &5351729318026661794
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10829,11 +10879,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5351729318026661793}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
-    type: 3}
+  getCoinFX: {fileID: 0}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!33 &5503724245240417579
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10948,7 +11001,7 @@ GameObject:
   - component: {fileID: 5503724245240417579}
   - component: {fileID: 4685599239274226078}
   - component: {fileID: 7533950961213656905}
-  - component: {fileID: 6104168087798797643}
+  - component: {fileID: 6053940230820818543}
   m_Layer: 0
   m_Name: Coin (8)
   m_TagString: coin
@@ -10956,6 +11009,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6053940230820818543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6053940230820818542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getCoinFX: {fileID: 0}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!4 &6093312950810254875
 Transform:
   m_ObjectHideFlags: 0
@@ -11023,34 +11093,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &6104168087798797643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6053940230820818542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
-    type: 3}
---- !u!114 &6501237511376175393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6524800010310466052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
-    type: 3}
 --- !u!1 &6524800010310466052
 GameObject:
   m_ObjectHideFlags: 0
@@ -11063,7 +11105,7 @@ GameObject:
   - component: {fileID: 4822930308586461505}
   - component: {fileID: 5731325530478196212}
   - component: {fileID: 7350628723816274723}
-  - component: {fileID: 6501237511376175393}
+  - component: {fileID: 6524800010310466053}
   m_Layer: 0
   m_Name: Coin (1)
   m_TagString: coin
@@ -11071,6 +11113,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6524800010310466053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6524800010310466052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
+    type: 3}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 880347485}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!23 &6634683451245800762
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11127,7 +11187,7 @@ BoxCollider:
   m_GameObject: {fileID: 7071668528763535687}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -11196,7 +11256,7 @@ GameObject:
   - component: {fileID: 8809427441086194178}
   - component: {fileID: 8585796241206546103}
   - component: {fileID: 6822267221454987360}
-  - component: {fileID: 7103912840230222434}
+  - component: {fileID: 7071668528763535688}
   m_Layer: 0
   m_Name: Coin (11)
   m_TagString: coin
@@ -11204,7 +11264,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &7103912840230222434
+--- !u!114 &7071668528763535688
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11213,11 +11273,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7071668528763535687}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
-    type: 3}
+  getCoinFX: {fileID: 0}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
 --- !u!4 &7114107396228165872
 Transform:
   m_ObjectHideFlags: 0
@@ -11297,7 +11360,7 @@ BoxCollider:
   m_GameObject: {fileID: 6524800010310466052}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -11318,7 +11381,7 @@ BoxCollider:
   m_GameObject: {fileID: 6053940230820818542}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -11481,6 +11544,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   hit_obj_item: {fileID: 917658551}
+  ItemMesh: {fileID: 0}
+  kinoko_se: {fileID: 8300000, guid: 54b240f9ccf1edb4cb9da0b6a1720bd7, type: 3}
+  audiosource_kinoko: {fileID: 2045284845}
   Mu: 2
 --- !u!1 &7819284992398528261
 GameObject:
@@ -11517,6 +11583,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   hit_obj_item: {fileID: 917658551}
+  ItemMesh: {fileID: 0}
+  kinoko_se: {fileID: 8300000, guid: 54b240f9ccf1edb4cb9da0b6a1720bd7, type: 3}
+  audiosource_kinoko: {fileID: 2045284845}
   Mu: 2
 --- !u!65 &7819284992398528266
 BoxCollider:
@@ -11578,6 +11647,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   hit_obj_item: {fileID: 917658551}
+  ItemMesh: {fileID: 0}
+  kinoko_se: {fileID: 8300000, guid: 54b240f9ccf1edb4cb9da0b6a1720bd7, type: 3}
+  audiosource_kinoko: {fileID: 2045284845}
   Mu: 2
 --- !u!114 &7819284992961606728
 MonoBehaviour:
@@ -11664,6 +11736,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   hit_obj_item: {fileID: 917658551}
+  ItemMesh: {fileID: 0}
+  kinoko_se: {fileID: 8300000, guid: 54b240f9ccf1edb4cb9da0b6a1720bd7, type: 3}
+  audiosource_kinoko: {fileID: 2045284845}
   Mu: 2
 --- !u!4 &8375146081642827829
 Transform:
@@ -11688,7 +11763,7 @@ BoxCollider:
   m_GameObject: {fileID: 5266498296715256522}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -11701,7 +11776,7 @@ BoxCollider:
   m_GameObject: {fileID: 5351729318026661793}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -11753,7 +11828,7 @@ BoxCollider:
   m_GameObject: {fileID: 4924953784407649196}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -11779,20 +11854,6 @@ Transform:
   m_Father: {fileID: 6093312950810254875}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 30, z: 43.065002}
---- !u!114 &9104135755478563096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9146200767030084157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773984efea2589347b93eb5a417de836, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  getCoinFX: {fileID: 2855809108651599584, guid: 7e0bb5cd13951104f827fcd9b146165c,
-    type: 3}
 --- !u!1 &9146200767030084157
 GameObject:
   m_ObjectHideFlags: 0
@@ -11805,7 +11866,7 @@ GameObject:
   - component: {fileID: 7390151599122555256}
   - component: {fileID: 7775649602626735565}
   - component: {fileID: 4783886893301687066}
-  - component: {fileID: 9104135755478563096}
+  - component: {fileID: 9146200767030084158}
   m_Layer: 0
   m_Name: Coin (6)
   m_TagString: coin
@@ -11813,3 +11874,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &9146200767030084158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9146200767030084157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 674a29a09b590c346baa21d013aef947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getCoinFX: {fileID: 0}
+  player: {fileID: 0}
+  hit_objplu: {fileID: 0}
+  trigger: {fileID: 0}
+  coin: {fileID: 8300000, guid: 533571f36d3e0224c829a6a28225dcb7, type: 3}
