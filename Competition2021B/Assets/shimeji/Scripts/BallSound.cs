@@ -16,9 +16,14 @@ public class BallSound : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (rb.velocity.x + rb.velocity.z != 0.0f)
-            if(!ass.isPlaying)ass.Play();
+        if (Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.z) > 0.05f)
+        {
+            if (ass.isPlaying == false)
+                ass.Play();
+        }
         else
+        {
             ass.Stop();
+        }
     }
 }
