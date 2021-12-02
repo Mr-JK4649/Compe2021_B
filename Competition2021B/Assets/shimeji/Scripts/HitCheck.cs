@@ -69,32 +69,38 @@ public class HitCheck : MonoBehaviour
 
         if (nonColRef)
         {
+            Vector3 a, b;
+            (a, b) = bg.GetLength();
             float num = 0.0f;
             while (num < 1.0f) {
-                cpo = ClosestPtPointOBB(spherePos);      //最近接点の座標を求める
+                Vector3 pos = Vector3.Lerp(a, b, num);
+                cpo = ClosestPtPointOBB(pos);           //最近接点の座標を求める
+
+                if (Vector3.Distance(cpo, spherePos) <= sphereSca) //Vector3.Dot(v, v) <= sphereSca * sphereSca
+                {
+                    sphere.position = pos;
+                    Vector3 nor = pos - cpo;  //ぶつかった壁との座標の差でベクトルを出す
+                    nor.Normalize();                //法線ベクトルの正規化
+                    if (ableRefFlag)
+                    {
+                        bg.PassNormalRefrection(nor);   //法線ベクトルをボールの移動制御スクリプトに渡して反射させる
+                        ableRefFlag = false;            //反射フラグを立てる
+                    }
+                    else
+                    { //壁から押し出す力
+                        bg.PushSamePower(nor);
+                    }
+
+                    return;
+                }
+
+                //壁に衝突しなかったら反射フラグを倒す
+                ableRefFlag = true;
+
                 num += 0.1f;
             }
            
-            if (Vector3.Distance(cpo, spherePos) <= sphereSca) //Vector3.Dot(v, v) <= sphereSca * sphereSca
-            {
-                Vector3 nor = spherePos - cpo;  //ぶつかった壁との座標の差でベクトルを出す
-                nor = Vector3.Normalize(nor);   //法線ベクトルの正規化
-                if (ableRefFlag)
-                {
-                    bg.PassNormalRefrection(nor);   //法線ベクトルをボールの移動制御スクリプトに渡して反射させる
-                    ableRefFlag = false;            //反射フラグを立てる
-                    Debug.Log(nor);
-                }
-                else
-                { //壁から押し出す力
-                    bg.PushSamePower(nor);
-                }
-
-                return;
-            }
-
-            //壁に衝突しなかったら反射フラグを倒す
-            ableRefFlag = true;
+            
         }
 
     }
@@ -124,7 +130,7 @@ public class HitCheck : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player") {
+        if (collision.gameObject.tag == "Player" && !nonColRef) {
             Vector3 sPos = collision.transform.position;
             cpo = ClosestPtPointOBB(sPos);  //最近接点の座標を求める
             Vector3 nor = sPos - cpo;       //ぶつかった壁との座標の差でベクトルを出す
@@ -136,8 +142,12 @@ public class HitCheck : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.tag == "Player") {
-            bg.PushSamePower(Vector3.zero);
+        if (collision.gameObject.tag == "Player" && !nonColRef) {
+            Vector3 sPos = collision.transform.position;
+            cpo = ClosestPtPointOBB(sPos);  //最近接点の座標を求める
+            Vector3 nor = sPos - cpo;       //ぶつかった壁との座標の差でベクトルを出す
+            nor.Normalize();
+            bg.PushSamePower(nor);
         }
     }
 }
