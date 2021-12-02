@@ -24,7 +24,7 @@ public class PlayerPoint : MonoBehaviour
         if (coin.gameObject.tag == "coin")
         {
             Debug.Log("Hello World");
-            coingettext.CoinCollect_Point += 1 ; //コインを取った時の数値に＋１する。
+            //coingettext.CoinCollect_Point += 1 ; //コインを取った時の数値に＋１する。
         }
     }
 }
