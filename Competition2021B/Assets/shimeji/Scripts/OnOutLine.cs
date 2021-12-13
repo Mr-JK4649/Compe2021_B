@@ -7,14 +7,14 @@ public class OnOutLine : MonoBehaviour
 
     private void Start()
     {
-        //transform.parent.gameObject.GetComponent<Outline>().enabled = false;
+        transform.parent.gameObject.GetComponent<Outline>().enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player") {
 
-            //transform.parent.gameObject.GetComponent<Outline>().enabled = true;
+            transform.parent.gameObject.GetComponent<Outline>().enabled = true;
             
         }
     }

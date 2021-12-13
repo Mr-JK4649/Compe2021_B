@@ -149,8 +149,8 @@ public class NewUpDownScript : MonoBehaviour
         Itemflgunko = false;
         player.transform.localScale = new Vector3(Unko, Unko, Unko);
 
-        Playery.y -= Unko2;
-        player.transform.position = Playery;
+        //Playery.y -= Unko2;
+        //player.transform.position = Playery;
         buffTime = 0;
         Destroy(gameObject);
     }

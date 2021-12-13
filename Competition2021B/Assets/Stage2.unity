@@ -753,7 +753,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 11.227, y: 180, z: 0}
 --- !u!1001 &59535685
 PrefabInstance:
@@ -1978,7 +1978,7 @@ PrefabInstance:
     - target: {fileID: 1498765535974638806, guid: 9e47dc056f3d25d41a57a7d2ddbe38b6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1498765535974638806, guid: 9e47dc056f3d25d41a57a7d2ddbe38b6,
         type: 3}
@@ -2329,7 +2329,7 @@ Transform:
   - {fileID: 1406388017}
   - {fileID: 22639724}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &726914369
 MonoBehaviour:
@@ -2440,7 +2440,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 57.721004, y: -116.579, z: -93.86001}
 --- !u!1 &775078356
 GameObject:
@@ -2571,6 +2571,7 @@ Transform:
   - {fileID: 1024617543}
   - {fileID: 8496446290166479278}
   - {fileID: 1316039873}
+  - {fileID: 1626368867}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2811,7 +2812,7 @@ Transform:
   m_Children:
   - {fileID: 1830804839}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &876210734
 MonoBehaviour:
@@ -3544,7 +3545,7 @@ Transform:
   m_Children:
   - {fileID: 983741638}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1058537858
 GameObject:
@@ -3776,7 +3777,7 @@ Transform:
   m_Children:
   - {fileID: 1145849563}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1179881391
 GameObject:
@@ -4898,7 +4899,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1391226313
 GameObject:
@@ -5611,7 +5612,7 @@ RectTransform:
   - {fileID: 1878556683}
   - {fileID: 1613451915}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5984,6 +5985,7 @@ GameObject:
   - component: {fileID: 1626368869}
   - component: {fileID: 1626368868}
   - component: {fileID: 1626368871}
+  - component: {fileID: 1626368874}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Player
@@ -5998,14 +6000,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626368866}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.15, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 59535686}
   - {fileID: 2082342604}
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 814002099}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1626368868
 MonoBehaviour:
@@ -6258,6 +6260,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1626368874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626368866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17197c4e70d609845a184c6d6c2f77f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &1626368876
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6267,13 +6281,13 @@ Rigidbody:
   m_GameObject: {fileID: 1626368866}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 2
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!135 &1626368877
 SphereCollider:
   m_ObjectHideFlags: 0
