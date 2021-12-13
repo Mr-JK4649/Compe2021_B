@@ -8,11 +8,13 @@ using UnityEngine.UI;
 public class PushButton : MonoBehaviour
 {
     [SerializeField] EventSystem eventSystem;
+    [SerializeField] GameObject titleCanvas;
     [SerializeField] GameObject StageSelectCanvas;
     [SerializeField] Button Stage1_Button;
     [SerializeField] Button Stage2_Button;
     [SerializeField] Button Stage3_Button;
     [SerializeField] Button Stage4_Button;
+    [SerializeField] Button Stage5_Button;
     GameObject selectedObj;
 
     [SerializeField] Trigger trigger;
@@ -32,6 +34,7 @@ public class PushButton : MonoBehaviour
         {
             trigger.RingSound(enter);
             StageSelectCanvas.SetActive(true);
+            titleCanvas.SetActive(false);
             Stage1_Button.Select();
         }
 
@@ -56,40 +59,43 @@ public class PushButton : MonoBehaviour
     {
         trigger.RingSound(enter);
         eventSystem.sendNavigationEvents = false;
-        Stage2_Button.interactable = false;
-        Stage3_Button.interactable = false;
-        Stage4_Button.interactable = false;
-        stageName = "MainScene";
-        Invoke("NextMain", 1f);
+        GoStage(1,"MainScene");
     }
     public void Stage2()
     {
         trigger.RingSound(enter);
         eventSystem.sendNavigationEvents = false;
-        Stage1_Button.interactable = false;
-        Stage3_Button.interactable = false;
-        Stage4_Button.interactable = false;
-        stageName = "Stage2";
-        Invoke("NextMain", 1f);
+        GoStage(2,"Stage2");
     }
     public void Stage3()
     {
         trigger.RingSound(enter);
         eventSystem.sendNavigationEvents = false;
-        Stage1_Button.interactable = false;
-        Stage2_Button.interactable = false;
-        Stage4_Button.interactable = false;
-        stageName = "Stage3";
-        Invoke("NextMain", 1f);
+        GoStage(3,"Stage3");
     }
     public void Stage4()
     {
         trigger.RingSound(enter);
         eventSystem.sendNavigationEvents = false;
-        Stage1_Button.interactable = false;
-        Stage2_Button.interactable = false;
-        Stage3_Button.interactable = false;
-        stageName = "Stage4";
+        GoStage(4,"Stage4");
+    }
+
+    public void Stage5()
+    {
+        trigger.RingSound(enter);
+        eventSystem.sendNavigationEvents = false;
+        GoStage(5,"NightStage");
+    }
+
+    void GoStage(int num,string name) { 
+        
+        if(num != 1) Stage1_Button.interactable = false;
+        if(num != 2) Stage2_Button.interactable = false;
+        if(num != 3) Stage3_Button.interactable = false;
+        if(num != 4) Stage4_Button.interactable = false;
+        if(num != 5) Stage5_Button.interactable = false;
+
+        stageName = name;
         Invoke("NextMain", 1f);
     }
 }

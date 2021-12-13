@@ -1188,7 +1188,7 @@ PrefabInstance:
     - target: {fileID: 5744188302100221799, guid: dbe18685ade59d945821497e8a013139,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5744188302100221799, guid: dbe18685ade59d945821497e8a013139,
         type: 3}
@@ -1455,7 +1455,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 57.721004, y: -116.579, z: -93.86001}
 --- !u!1 &862443739
 GameObject:
@@ -1516,7 +1516,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &882275177
 AudioSource:
@@ -3221,7 +3221,7 @@ MonoBehaviour:
   wn: {x: 0, y: 0, z: 0}
   oldPos: {x: 0, y: 0, z: 0}
   nowVec: {x: 0, y: 0, z: 0}
-  showWave: {fileID: 1250507045210962, guid: 3fe0df07025a3e747855b1bb671fc04e, type: 3}
+  shockWave: {fileID: 0}
   ass: {fileID: 1645358535}
 --- !u!54 &1645358529
 Rigidbody:
@@ -3528,7 +3528,7 @@ PrefabInstance:
     - target: {fileID: 650631196309800191, guid: 03ad1356f26921246bbd54be68753213,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 650631196309800191, guid: 03ad1356f26921246bbd54be68753213,
         type: 3}

@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Stage4.unity
     guid: b86fe64fb815b0c42894a601a0a60fdd
+  - enabled: 1
+    path: Assets/NightStage.unity
+    guid: b9bf90d5e61af0e45baf51209f710c20
   m_configObjects: {}
